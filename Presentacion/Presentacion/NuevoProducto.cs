@@ -19,13 +19,35 @@ namespace Presentacion
 
         private void NuevoProducto_Load(object sender, EventArgs e)
         {
+            //Identifico el parametro que se paso
             switch (lblParametro.Text)
             {
                 case "A":
                     this.Text = "Nuevo Producto";
+                    this.txtProductoNombre.Enabled = true;
+                    this.txtProductoDescripcion.Enabled = true;
+                    this.cmbCategoria.Enabled = true;
+                    this.txtProductoPrecio.Enabled = true;
+                    this.txtProductoStock.Enabled = true;
+                    this.btnSubirFoto.Enabled = true;
                     break;
                 case "M":
                     this.Text = "Modificar Producto";
+                    this.txtProductoNombre.Enabled = true;
+                    this.txtProductoDescripcion.Enabled = true;
+                    this.cmbCategoria.Enabled = true;
+                    this.txtProductoPrecio.Enabled = true;
+                    this.txtProductoStock.Enabled = true;
+                    this.btnSubirFoto.Enabled = true;
+                    break;
+                case "E":
+                    this.Text = "Eliminar Producto";
+                    this.txtProductoNombre.Enabled = false;
+                    this.txtProductoDescripcion.Enabled = false;
+                    this.cmbCategoria.Enabled = false;
+                    this.txtProductoPrecio.Enabled = false;
+                    this.txtProductoStock.Enabled = false;
+                    this.btnSubirFoto.Enabled = false;
                     break;
                 default:
                     this.Text = "";
@@ -36,7 +58,29 @@ namespace Presentacion
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Se creó el Producto");
+            string snombre = this.txtProductoNombre.Text;
+            string sdescripcion = this.txtProductoDescripcion.Text;
+            //int icategoria = Int32.Parse(this.cmbCategoria.SelectedValue);
+            int icategoria = 1;
+            float fprecio=float.Parse(this.txtProductoPrecio.Text);
+            int istock = Int32.Parse(this.txtProductoStock.Text);
+            Image ifoto = this.PicBoxProductoFoto.Image;
+
+            switch (lblParametro.Text)
+            {
+                case "A":
+                    //llamo al WS con las variables
+                    MessageBox.Show("Se creó el Producto" + snombre, sdescripcion);
+                    break;
+                case "M":
+                    //llamo al WS con las variables
+                    MessageBox.Show("Se modifico el Producto" + snombre);
+                    break;
+                case "E":
+                    //llamo al WS con las variables
+                    MessageBox.Show("Se elimino el Producto" + snombre);
+                    break;
+            }
             this.Close();
         }
     
@@ -105,7 +149,7 @@ namespace Presentacion
 
         private void txtProductoStock_Validated(object sender, EventArgs e)
         {
-            if (Int32.Parse(txtProductoStock.Text) == 0)
+            if (float.Parse(txtProductoStock.Text) == 0)
             {
                 errorProvider.SetError(txtProductoPrecio, "Debe ingresar el stock actual del Producto");
                 txtProductoPrecio.Focus();
@@ -144,6 +188,11 @@ namespace Presentacion
         }
 
         private void txtProductoNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtProductoStock_TextChanged(object sender, EventArgs e)
         {
 
         }

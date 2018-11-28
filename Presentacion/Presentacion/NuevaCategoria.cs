@@ -24,7 +24,22 @@ namespace Presentacion
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Se creó la Categoría");
+            switch (lblParametro.Text)
+            {
+                case "A":
+                    MessageBox.Show("Se creó la Categoría");
+                    break;
+                case "M":
+                    MessageBox.Show("Se modifico la Categoría");
+                    break;
+                case "E":
+                    MessageBox.Show("Se elimino la Categoría");
+                    break;
+                default:
+                    this.Text = "";
+                    break;
+            }
+            
             this.Close();
         }
 

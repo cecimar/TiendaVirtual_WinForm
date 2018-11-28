@@ -24,7 +24,19 @@ namespace Presentacion
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Se creó la Moneda");
+            switch (lblParametro.Text)
+            {
+                case "A":
+                    MessageBox.Show("Se creó la Moneda");
+                    break;
+                case "M":
+                    MessageBox.Show("Se modifico la Moneda");
+                    break;
+                case "E":
+                    MessageBox.Show("Se elimino la Moneda");
+                    break;
+            }
+           
             this.Close();
         }
 

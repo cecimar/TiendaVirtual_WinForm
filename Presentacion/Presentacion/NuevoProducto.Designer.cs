@@ -157,6 +157,7 @@
             this.txtProductoPrecio.Name = "txtProductoPrecio";
             this.txtProductoPrecio.Size = new System.Drawing.Size(330, 27);
             this.txtProductoPrecio.TabIndex = 13;
+            this.txtProductoPrecio.Text = "0.0";
             this.txtProductoPrecio.TextChanged += new System.EventHandler(this.txtProductoPrecio_TextChanged);
             this.txtProductoPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductoPrecio_KeyPress);
             this.txtProductoPrecio.Validated += new System.EventHandler(this.txtProductoPrecio_Validated);
@@ -169,6 +170,8 @@
             this.txtProductoStock.Name = "txtProductoStock";
             this.txtProductoStock.Size = new System.Drawing.Size(330, 27);
             this.txtProductoStock.TabIndex = 14;
+            this.txtProductoStock.Text = "0";
+            this.txtProductoStock.TextChanged += new System.EventHandler(this.txtProductoStock_TextChanged);
             this.txtProductoStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductoStock_KeyPress);
             this.txtProductoStock.Validated += new System.EventHandler(this.txtProductoStock_Validated);
             // 

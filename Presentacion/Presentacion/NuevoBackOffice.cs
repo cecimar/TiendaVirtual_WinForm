@@ -39,7 +39,26 @@ namespace Presentacion
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Se creó el Producto");
+            //Cargo los valores de los controles en variables y los casteo a los tipos esperados por el ws
+            string semail=this.txtUsuarioEmail.Text;
+            string scontrasenia=this.txtUsuarioContrasenia.Text;
+            string snombre=this.txtBackOfficeNombre.Text;
+            int irol = 1;
+            string crol = irol.ToString();
+
+            //Llamo al WS
+            switch (lblParametro.Text)
+            {
+                case "A":
+                    MessageBox.Show("Se creó BO");
+                    break;
+                case "M":
+                    MessageBox.Show("Se modifico BO");
+                    break;
+                case "E":
+                    MessageBox.Show("Se elimino BO");
+                    break;
+            }
             this.Close();
         }
 
@@ -95,21 +114,36 @@ namespace Presentacion
 
         private void NuevoBackOffice_Load(object sender, EventArgs e)
         {
+            //Identifico el modo que se paso por parametro
             switch (lblParametro.Text)
             {
                 case "A":
                     this.Text = "Nuevo BackOffice";
+                    this.txtUsuarioEmail.Enabled = true;
+                    this.txtUsuarioContrasenia.Enabled = true;
+                    this.txtBackOfficeNombre.Enabled = true;
+                    this.cmbRol.Enabled = true;
                     break;
                 case "M":
                     this.Text = "Modificar BackOffice";
+                    this.txtUsuarioEmail.Enabled = false;
+                    this.txtUsuarioContrasenia.Enabled = true;
+                    this.txtBackOfficeNombre.Enabled = true;
+                    this.cmbRol.Enabled = true;
                     break;
                 case "E":
                     this.Text = "Eliminar BackOffice";
+                    this.txtUsuarioEmail.Enabled = false;
+                    this.txtUsuarioContrasenia.Enabled = false;
+                    this.txtBackOfficeNombre.Enabled = true;
+                    this.cmbRol.Enabled = false;
                     break;
                 default:
                     this.Text = "";
                     break;
             }
+          
+            //aca deberia cargar el combo con los roles
         }
     }
 }
