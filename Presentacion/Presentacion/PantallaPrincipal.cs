@@ -25,6 +25,7 @@ namespace Presentacion
         private void crearMonedaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NuevaMoneda frm = new NuevaMoneda();
+            frm.lblParametro.Text = "A";
             frm.Show();
         }
 
@@ -60,12 +61,14 @@ namespace Presentacion
         private void nuevaCategoríaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NuevaCategoria frm = new NuevaCategoria();
+            frm.lblParametro.Text = "A";
             frm.Show();
         }
 
         private void nuevoProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NuevoProducto frm = new NuevoProducto();
+            frm.lblParametro.Text = "A";
             frm.Show();
         }
 
@@ -77,6 +80,63 @@ namespace Presentacion
         private void nuevoBackOfficeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NuevoBackOffice frm = new NuevoBackOffice();
+            frm.lblParametro.Text = "A";
+            frm.Show();
+        }
+
+        private void modificarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NuevoProducto frm = new NuevoProducto();
+            frm.lblParametro.Text = "M";
+            frm.Show();
+        }
+
+        private void modificarCategoríaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NuevaCategoria frm = new NuevaCategoria();
+            frm.lblParametro.Text = "M";
+            frm.Show();
+        }
+
+        private void modificarMonedaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NuevaMoneda frm = new NuevaMoneda();
+            frm.lblParametro.Text = "M";
+            frm.Show();
+        }
+
+        private void eliminarMonedaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NuevaMoneda frm = new NuevaMoneda();
+            frm.lblParametro.Text = "E";
+            frm.Show();
+        }
+
+        private void eliminarCategoríaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NuevaCategoria frm = new NuevaCategoria();
+            frm.lblParametro.Text = "E";
+            frm.Show();
+        }
+
+        private void eliminarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NuevoProducto frm = new NuevoProducto();
+            frm.lblParametro.Text = "E";
+            frm.Show();
+        }
+
+        private void modificarBackOfficeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NuevoBackOffice frm = new NuevoBackOffice();
+            frm.lblParametro.Text = "M";
+            frm.Show();
+        }
+
+        private void eliminarBackOfficeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NuevoBackOffice frm = new NuevoBackOffice();
+            frm.lblParametro.Text = "E";
             frm.Show();
         }
     }

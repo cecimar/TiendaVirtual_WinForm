@@ -105,5 +105,23 @@ namespace Presentacion
             }
         }
 
+        private void NuevaMoneda_Load(object sender, EventArgs e)
+        {
+            switch (lblParametro.Text)
+            {
+                case "A":
+                    this.Text = "Nueva Moneda";
+                    break;
+                case "M":
+                    this.Text = "Modificar Moneda";
+                    break;
+                case "E":
+                    this.Text = "Eliminar Moneda";
+                    break;
+                default:
+                    this.Text = "";
+                    break;
+            }
+        }
     }
 }

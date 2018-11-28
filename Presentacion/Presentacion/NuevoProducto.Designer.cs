@@ -46,6 +46,7 @@
             this.PicBoxProductoFoto = new System.Windows.Forms.PictureBox();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblParametro = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxProductoFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -221,12 +222,23 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // lblParametro
+            // 
+            this.lblParametro.AutoSize = true;
+            this.lblParametro.Location = new System.Drawing.Point(580, 4);
+            this.lblParametro.Name = "lblParametro";
+            this.lblParametro.Size = new System.Drawing.Size(85, 19);
+            this.lblParametro.TabIndex = 19;
+            this.lblParametro.Text = "Parametro";
+            this.lblParametro.Visible = false;
+            // 
             // NuevoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(705, 543);
+            this.Controls.Add(this.lblParametro);
             this.Controls.Add(this.cmbCategoria);
             this.Controls.Add(this.PicBoxProductoFoto);
             this.Controls.Add(this.btnSubirFoto);
@@ -248,7 +260,7 @@
             this.MinimizeBox = false;
             this.Name = "NuevoProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nuevo Producto";
+            this.Text = "\\";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.NuevoProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxProductoFoto)).EndInit();
@@ -277,5 +289,6 @@
         private System.Windows.Forms.PictureBox PicBoxProductoFoto;
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        public System.Windows.Forms.Label lblParametro;
     }
 }

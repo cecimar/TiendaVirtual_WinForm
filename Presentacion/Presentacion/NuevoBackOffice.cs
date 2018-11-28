@@ -92,5 +92,24 @@ namespace Presentacion
         {
 
         }
+
+        private void NuevoBackOffice_Load(object sender, EventArgs e)
+        {
+            switch (lblParametro.Text)
+            {
+                case "A":
+                    this.Text = "Nuevo BackOffice";
+                    break;
+                case "M":
+                    this.Text = "Modificar BackOffice";
+                    break;
+                case "E":
+                    this.Text = "Eliminar BackOffice";
+                    break;
+                default:
+                    this.Text = "";
+                    break;
+            }
+        }
     }
 }

@@ -17,11 +17,6 @@ namespace Presentacion
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -54,6 +49,30 @@ namespace Presentacion
         private void txtCategoriaNombre_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblParametro_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NuevaCategoria_Load(object sender, EventArgs e)
+        {
+            switch (lblParametro.Text)
+            {
+                case "A":
+                    this.Text = "Nueva Categoria";
+                    break;
+                case "M":
+                    this.Text = "Modificar Categoria";
+                    break;
+                case "E":
+                    this.Text = "Eliminar Categoria";
+                    break;
+                default:
+                    this.Text = "";
+                    break;
+            }
         }
     }
 }

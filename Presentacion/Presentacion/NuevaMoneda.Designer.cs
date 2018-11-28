@@ -38,6 +38,7 @@
             this.txtMonedaCotizacion = new System.Windows.Forms.TextBox();
             this.lblMonedaCotizacion = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblParametro = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,12 +135,23 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // lblParametro
+            // 
+            this.lblParametro.AutoSize = true;
+            this.lblParametro.Location = new System.Drawing.Point(586, 262);
+            this.lblParametro.Name = "lblParametro";
+            this.lblParametro.Size = new System.Drawing.Size(85, 19);
+            this.lblParametro.TabIndex = 21;
+            this.lblParametro.Text = "Parametro";
+            this.lblParametro.Visible = false;
+            // 
             // NuevaMoneda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(695, 299);
+            this.Controls.Add(this.lblParametro);
             this.Controls.Add(this.txtMonedaCotizacion);
             this.Controls.Add(this.lblMonedaCotizacion);
             this.Controls.Add(this.btnCancelar);
@@ -156,6 +168,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nueva Moneda";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.NuevaMoneda_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -173,5 +186,6 @@
         private System.Windows.Forms.TextBox txtMonedaCotizacion;
         private System.Windows.Forms.Label lblMonedaCotizacion;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        public System.Windows.Forms.Label lblParametro;
     }
 }

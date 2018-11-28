@@ -40,6 +40,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblParametro = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,12 +160,23 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // lblParametro
+            // 
+            this.lblParametro.AutoSize = true;
+            this.lblParametro.Location = new System.Drawing.Point(686, 370);
+            this.lblParametro.Name = "lblParametro";
+            this.lblParametro.Size = new System.Drawing.Size(85, 19);
+            this.lblParametro.TabIndex = 31;
+            this.lblParametro.Text = "Parametro";
+            this.lblParametro.Visible = false;
+            // 
             // NuevoBackOffice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(792, 398);
+            this.Controls.Add(this.lblParametro);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.cmbRol);
@@ -182,6 +194,7 @@
             this.Name = "NuevoBackOffice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo BackOffice";
+            this.Load += new System.EventHandler(this.NuevoBackOffice_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -201,5 +214,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        public System.Windows.Forms.Label lblParametro;
     }
 }

@@ -36,6 +36,7 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblParametro = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,7 +44,7 @@
             // 
             this.lblCategoriaNombre.AutoSize = true;
             this.lblCategoriaNombre.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoriaNombre.Location = new System.Drawing.Point(11, 31);
+            this.lblCategoriaNombre.Location = new System.Drawing.Point(9, 75);
             this.lblCategoriaNombre.Name = "lblCategoriaNombre";
             this.lblCategoriaNombre.Size = new System.Drawing.Size(182, 19);
             this.lblCategoriaNombre.TabIndex = 0;
@@ -54,7 +55,7 @@
             // 
             this.lblCategoriaDescripcion.AutoSize = true;
             this.lblCategoriaDescripcion.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoriaDescripcion.Location = new System.Drawing.Point(14, 80);
+            this.lblCategoriaDescripcion.Location = new System.Drawing.Point(12, 124);
             this.lblCategoriaDescripcion.Name = "lblCategoriaDescripcion";
             this.lblCategoriaDescripcion.Size = new System.Drawing.Size(108, 19);
             this.lblCategoriaDescripcion.TabIndex = 1;
@@ -63,7 +64,7 @@
             // txtCategoriaNombre
             // 
             this.txtCategoriaNombre.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoriaNombre.Location = new System.Drawing.Point(258, 31);
+            this.txtCategoriaNombre.Location = new System.Drawing.Point(256, 75);
             this.txtCategoriaNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCategoriaNombre.Name = "txtCategoriaNombre";
             this.txtCategoriaNombre.Size = new System.Drawing.Size(330, 27);
@@ -74,7 +75,7 @@
             // txtCategoriaDescripcion
             // 
             this.txtCategoriaDescripcion.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoriaDescripcion.Location = new System.Drawing.Point(258, 80);
+            this.txtCategoriaDescripcion.Location = new System.Drawing.Point(256, 124);
             this.txtCategoriaDescripcion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCategoriaDescripcion.Name = "txtCategoriaDescripcion";
             this.txtCategoriaDescripcion.Size = new System.Drawing.Size(330, 27);
@@ -110,12 +111,23 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // lblParametro
+            // 
+            this.lblParametro.AutoSize = true;
+            this.lblParametro.Location = new System.Drawing.Point(513, 9);
+            this.lblParametro.Name = "lblParametro";
+            this.lblParametro.Size = new System.Drawing.Size(85, 19);
+            this.lblParametro.TabIndex = 20;
+            this.lblParametro.Text = "Parametro";
+            this.lblParametro.Visible = false;
+            // 
             // NuevaCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(610, 256);
+            this.Controls.Add(this.lblParametro);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.txtCategoriaDescripcion);
@@ -130,7 +142,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nueva Categoría";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.NuevaCategoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -146,6 +158,7 @@
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        public System.Windows.Forms.Label lblParametro;
     }
 }
 

@@ -19,7 +19,19 @@ namespace Presentacion
 
         private void NuevoProducto_Load(object sender, EventArgs e)
         {
-
+            switch (lblParametro.Text)
+            {
+                case "A":
+                    this.Text = "Nuevo Producto";
+                    break;
+                case "M":
+                    this.Text = "Modificar Producto";
+                    break;
+                default:
+                    this.Text = "";
+                    break;
+            }
+            
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)

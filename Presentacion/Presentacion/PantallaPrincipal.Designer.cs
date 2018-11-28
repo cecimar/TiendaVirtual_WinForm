@@ -95,14 +95,16 @@
             // modificarMonedaToolStripMenuItem
             // 
             this.modificarMonedaToolStripMenuItem.Name = "modificarMonedaToolStripMenuItem";
-            this.modificarMonedaToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.modificarMonedaToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.modificarMonedaToolStripMenuItem.Text = "Modificar Moneda";
+            this.modificarMonedaToolStripMenuItem.Click += new System.EventHandler(this.modificarMonedaToolStripMenuItem_Click);
             // 
             // eliminarMonedaToolStripMenuItem
             // 
             this.eliminarMonedaToolStripMenuItem.Name = "eliminarMonedaToolStripMenuItem";
-            this.eliminarMonedaToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.eliminarMonedaToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.eliminarMonedaToolStripMenuItem.Text = "Eliminar Moneda";
+            this.eliminarMonedaToolStripMenuItem.Click += new System.EventHandler(this.eliminarMonedaToolStripMenuItem_Click);
             // 
             // buscarMonedaToolStripMenuItem
             // 
@@ -141,12 +143,14 @@
             this.modificarCategoríaToolStripMenuItem.Name = "modificarCategoríaToolStripMenuItem";
             this.modificarCategoríaToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
             this.modificarCategoríaToolStripMenuItem.Text = "Modificar Categoría";
+            this.modificarCategoríaToolStripMenuItem.Click += new System.EventHandler(this.modificarCategoríaToolStripMenuItem_Click);
             // 
             // eliminarCategoríaToolStripMenuItem
             // 
             this.eliminarCategoríaToolStripMenuItem.Name = "eliminarCategoríaToolStripMenuItem";
             this.eliminarCategoríaToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
             this.eliminarCategoríaToolStripMenuItem.Text = "Eliminar Categoría";
+            this.eliminarCategoríaToolStripMenuItem.Click += new System.EventHandler(this.eliminarCategoríaToolStripMenuItem_Click);
             // 
             // listarCategoríaToolStripMenuItem
             // 
@@ -186,12 +190,14 @@
             this.modificarProductoToolStripMenuItem.Name = "modificarProductoToolStripMenuItem";
             this.modificarProductoToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.modificarProductoToolStripMenuItem.Text = "Modificar Producto";
+            this.modificarProductoToolStripMenuItem.Click += new System.EventHandler(this.modificarProductoToolStripMenuItem_Click);
             // 
             // eliminarProductoToolStripMenuItem
             // 
             this.eliminarProductoToolStripMenuItem.Name = "eliminarProductoToolStripMenuItem";
-            this.eliminarProductoToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.eliminarProductoToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.eliminarProductoToolStripMenuItem.Text = "Eliminar Producto";
+            this.eliminarProductoToolStripMenuItem.Click += new System.EventHandler(this.eliminarProductoToolStripMenuItem_Click);
             // 
             // listarProductosToolStripMenuItem
             // 
@@ -230,12 +236,14 @@
             this.modificarBackOfficeToolStripMenuItem.Name = "modificarBackOfficeToolStripMenuItem";
             this.modificarBackOfficeToolStripMenuItem.Size = new System.Drawing.Size(223, 26);
             this.modificarBackOfficeToolStripMenuItem.Text = "Modificar BackOffice";
+            this.modificarBackOfficeToolStripMenuItem.Click += new System.EventHandler(this.modificarBackOfficeToolStripMenuItem_Click);
             // 
             // eliminarBackOfficeToolStripMenuItem
             // 
             this.eliminarBackOfficeToolStripMenuItem.Name = "eliminarBackOfficeToolStripMenuItem";
             this.eliminarBackOfficeToolStripMenuItem.Size = new System.Drawing.Size(223, 26);
             this.eliminarBackOfficeToolStripMenuItem.Text = "Eliminar BackOffice";
+            this.eliminarBackOfficeToolStripMenuItem.Click += new System.EventHandler(this.eliminarBackOfficeToolStripMenuItem_Click);
             // 
             // buscarBackOfficeToolStripMenuItem
             // 
