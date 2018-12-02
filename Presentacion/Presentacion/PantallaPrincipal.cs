@@ -139,5 +139,26 @@ namespace Presentacion
             frm.lblParametro.Text = "E";
             frm.Show();
         }
+
+        private void nuevoRolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NuevoRol frm = new NuevoRol();
+            frm.lblParametro.Text = "A";
+            frm.Show();
+        }
+
+        private void modificarRolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NuevoRol frm = new NuevoRol();
+            frm.lblParametro.Text = "M";
+            frm.Show();
+        }
+
+        private void eliminarRolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NuevoRol frm = new NuevoRol();
+            frm.lblParametro.Text = "E";
+            frm.Show();
+        }
     }
 }

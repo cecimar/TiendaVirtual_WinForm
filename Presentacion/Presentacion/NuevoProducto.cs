@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Presentacion.WebServiceTV;
 
 namespace Presentacion
 {
@@ -19,6 +20,16 @@ namespace Presentacion
 
         private void NuevoProducto_Load(object sender, EventArgs e)
         {
+            WebServiceSoapClient ws = new WebServiceSoapClient();
+
+            //Cargo el combo con los roles
+            List<CategoriaVO> lstcat = new List<CategoriaVO>();
+            lstcat = ws.ListarCategorias().ToList();
+            this.cmbCategoria.DataSource = null;
+            this.cmbCategoria.DataSource = lstcat;
+            this.cmbCategoria.ValueMember = "IdCategoria";
+            this.cmbCategoria.DisplayMember = "Nombre";
+
             //Identifico el parametro que se paso
             switch (lblParametro.Text)
             {
@@ -61,41 +72,34 @@ namespace Presentacion
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            string snombre = this.txtProductoNombre.Text;
-            string sdescripcion = this.txtProductoDescripcion.Text;
-            //int icategoria = Int32.Parse(this.cmbCategoria.SelectedValue);
-            int icategoria = 1;
-            float fprecio=float.Parse(this.txtProductoPrecio.Text);
-            int istock = Int32.Parse(this.txtProductoStock.Text);
-            Image ifoto = this.PicBoxProductoFoto.Image;
-
-            /*ProductoVO = new ProductoVO()
-            {
-                //IdProducto = idp;
-                Nombre = this.txtProductoNombre.Text;
-                Descripcion = this.txtProductoDescripcion.Text;
-                Foto = this.PicBoxProductoFoto.Image;
-                Precio = float.Parse(this.txtProductoPrecio.Text);
-                Stock = Int32.Parse(this.txtProductoStock.Text);
-                FechaAlta = alta;
-                Habilitado = this.chkProductoHabilitado.Value;
-                IdCategoria = 1;
-            }*/
-
+            int proid;
+            WebServiceSoapClient ws = new WebServiceSoapClient();
+           
             switch (lblParametro.Text)
             {
                 case "A":
-                    //llamo al WS con las variables
-                    //ws.InsertarProducto();
-                    MessageBox.Show("Se creó el Producto" + snombre, sdescripcion);
+                    ProductoVO prvo = new ProductoVO()
+                    {
+                        Nombre = this.txtProductoNombre.Text,
+                        Descripcion = this.txtProductoDescripcion.Text,
+                        IdCategoria = (int)this.cmbCategoria.SelectedValue,
+                        Precio = Decimal.Parse(this.txtProductoPrecio.Text),
+                        Stock = Int32.Parse(this.txtProductoStock.Text),
+                        Foto = "foto1.jpg",
+                        FechaAlta = DateTime.Today,
+                        Habilitado = this.chkProductoHabilitado.Checked
+                    };
+
+                    ws.InsertarProducto(prvo);
+                    MessageBox.Show("Se creó el Producto");
                     break;
                 case "M":
                     //ws.ModificarProducto();
-                    MessageBox.Show("Se modifico el Producto" + snombre);
+                    MessageBox.Show("Se modifico el Producto");
                     break;
                 case "E":
                     //ws.EliminarProducto();
-                    MessageBox.Show("Se elimino el Producto" + snombre);
+                    MessageBox.Show("Se elimino el Producto");
                     break;
             }
             this.Close();
@@ -105,16 +109,6 @@ namespace Presentacion
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void lblProductoPrecio_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblProductoFoto_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void txtProductoPrecio_TextChanged(object sender, EventArgs e)

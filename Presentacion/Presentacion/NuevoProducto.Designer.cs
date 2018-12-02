@@ -130,7 +130,6 @@
             this.lblProductoFoto.Size = new System.Drawing.Size(51, 19);
             this.lblProductoFoto.TabIndex = 10;
             this.lblProductoFoto.Text = "Foto:";
-            this.lblProductoFoto.Click += new System.EventHandler(this.lblProductoFoto_Click);
             // 
             // lblProductoPrecio
             // 
@@ -141,7 +140,6 @@
             this.lblProductoPrecio.Size = new System.Drawing.Size(156, 19);
             this.lblProductoPrecio.TabIndex = 11;
             this.lblProductoPrecio.Text = "Precio Unitario (*):";
-            this.lblProductoPrecio.Click += new System.EventHandler(this.lblProductoPrecio_Click);
             // 
             // lblProductoStock
             // 
@@ -242,7 +240,7 @@
             // chkProductoHabilitado
             // 
             this.chkProductoHabilitado.AutoSize = true;
-            this.chkProductoHabilitado.Location = new System.Drawing.Point(305, 440);
+            this.chkProductoHabilitado.Location = new System.Drawing.Point(307, 445);
             this.chkProductoHabilitado.Name = "chkProductoHabilitado";
             this.chkProductoHabilitado.Size = new System.Drawing.Size(18, 17);
             this.chkProductoHabilitado.TabIndex = 8;

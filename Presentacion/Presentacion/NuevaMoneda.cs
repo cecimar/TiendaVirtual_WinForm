@@ -26,6 +26,7 @@ namespace Presentacion
         private void btnGrabar_Click(object sender, EventArgs e)
         {
             int monid = 0;
+            decimal moncot = 0;
             WebServiceSoapClient ws = new WebServiceSoapClient();
             switch (lblParametro.Text)
             {
@@ -40,9 +41,14 @@ namespace Presentacion
                     ws.InsertarMoneda(monvo);
                     break;
                 case "M":
+                    monid = Int32.Parse(this.txtMonedaId.Text);
+                    moncot = Decimal.Parse(this.txtMonedaCotizacion.Text);
+                    ws.ModificarMonedaCotizacion(monid, moncot);
                     MessageBox.Show("Se modifico la Moneda");
                     break;
                 case "E":
+                    monid = Int32.Parse(this.txtMonedaId.Text);
+                    ws.BorrarMoneda(monid);
                     MessageBox.Show("Se elimino la Moneda");
                     break;
             }
@@ -141,8 +147,8 @@ namespace Presentacion
                 case "M":
                     this.Text = "Modificar Moneda";
                     this.txtMonedaId.Enabled = true;
-                    this.txtMonedaAbreviatura.Enabled = true;
-                    this.txtMonedaDescripcion.Enabled = true;
+                    this.txtMonedaAbreviatura.Enabled = false;
+                    this.txtMonedaDescripcion.Enabled = false;
                     this.txtMonedaCotizacion.Enabled = true;
                     break;
                 case "E":

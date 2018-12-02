@@ -18,11 +18,6 @@ namespace Presentacion
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnGrabar_Click(object sender, EventArgs e)
         {
             int catid = 0;
@@ -116,11 +111,6 @@ namespace Presentacion
                     this.Text = "";
                     break;
             }
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
         }
 
         private void chkCategoriaHabilitada_CheckedChanged(object sender, EventArgs e)

@@ -69,7 +69,6 @@
             this.lblBackOfficeNombre.Size = new System.Drawing.Size(106, 19);
             this.lblBackOfficeNombre.TabIndex = 27;
             this.lblBackOfficeNombre.Text = "Nombre (*): ";
-            this.lblBackOfficeNombre.Click += new System.EventHandler(this.lblCategoria_Click);
             // 
             // txtBackOfficeNombre
             // 
@@ -201,6 +200,8 @@
             this.txtBackOfficeId.Name = "txtBackOfficeId";
             this.txtBackOfficeId.Size = new System.Drawing.Size(371, 27);
             this.txtBackOfficeId.TabIndex = 35;
+            this.txtBackOfficeId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBackOfficeId_KeyPress);
+            this.txtBackOfficeId.Validating += new System.ComponentModel.CancelEventHandler(this.txtBackOfficeId_Validating);
             // 
             // lblBackOfficeId
             // 
@@ -240,6 +241,7 @@
             this.Name = "NuevoBackOffice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo BackOffice";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.NuevoBackOffice_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);

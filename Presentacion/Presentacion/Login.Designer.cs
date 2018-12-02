@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnGrabar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.txtUsuarioContrasenia = new System.Windows.Forms.TextBox();
             this.txtUsuarioEmail = new System.Windows.Forms.TextBox();
             this.lblUsuarioContrasenia = new System.Windows.Forms.Label();
@@ -49,18 +49,18 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // btnGrabar
+            // btnAceptar
             // 
-            this.btnGrabar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGrabar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrabar.Location = new System.Drawing.Point(267, 158);
-            this.btnGrabar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(144, 44);
-            this.btnGrabar.TabIndex = 35;
-            this.btnGrabar.Text = "Grabar";
-            this.btnGrabar.UseVisualStyleBackColor = true;
-            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAceptar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.Location = new System.Drawing.Point(267, 158);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(144, 44);
+            this.btnAceptar.TabIndex = 35;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // txtUsuarioContrasenia
             // 
@@ -108,7 +108,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(803, 229);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnGrabar);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtUsuarioContrasenia);
             this.Controls.Add(this.txtUsuarioEmail);
             this.Controls.Add(this.lblUsuarioContrasenia);
@@ -127,7 +127,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnGrabar;
+        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.TextBox txtUsuarioContrasenia;
         private System.Windows.Forms.TextBox txtUsuarioEmail;
         private System.Windows.Forms.Label lblUsuarioContrasenia;

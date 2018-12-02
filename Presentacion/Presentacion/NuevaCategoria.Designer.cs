@@ -53,7 +53,6 @@
             this.lblCategoriaNombre.Size = new System.Drawing.Size(182, 19);
             this.lblCategoriaNombre.TabIndex = 0;
             this.lblCategoriaNombre.Text = "Nombre Categoría (*):";
-            this.lblCategoriaNombre.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblCategoriaDescripcion
             // 
@@ -134,7 +133,6 @@
             this.lblCategoriaHabilitada.Size = new System.Drawing.Size(93, 19);
             this.lblCategoriaHabilitada.TabIndex = 21;
             this.lblCategoriaHabilitada.Text = "Habilitado:";
-            this.lblCategoriaHabilitada.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // chkCategoriaHabilitada
             // 
@@ -149,7 +147,7 @@
             // txtCategoriaId
             // 
             this.txtCategoriaId.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoriaId.Location = new System.Drawing.Point(268, 5);
+            this.txtCategoriaId.Location = new System.Drawing.Point(261, 13);
             this.txtCategoriaId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCategoriaId.Name = "txtCategoriaId";
             this.txtCategoriaId.Size = new System.Drawing.Size(330, 27);

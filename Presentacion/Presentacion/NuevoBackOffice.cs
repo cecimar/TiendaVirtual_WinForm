@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Presentacion.WebServiceTV;
 
 namespace Presentacion
 {
@@ -15,11 +16,6 @@ namespace Presentacion
         public NuevoBackOffice()
         {
             InitializeComponent();
-        }
-
-        private void lblCategoria_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void txtProductoPrecio_TextChanged(object sender, EventArgs e)
@@ -39,26 +35,36 @@ namespace Presentacion
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            //Cargo los valores de los controles en variables y los casteo a los tipos esperados por el ws
-            string semail=this.txtUsuarioEmail.Text;
-            string scontrasenia=this.txtUsuarioContrasenia.Text;
-            string snombre=this.txtBackOfficeNombre.Text;
-            int irol = 1;
-            string crol = irol.ToString();
+            int boid;
+            WebServiceSoapClient ws = new WebServiceSoapClient();
 
-            //Llamo al WS
             switch (lblParametro.Text)
             {
                 case "A":
+                    BackofficeInsVO bovo = new BackofficeInsVO
+                    {
+                        Email = this.txtUsuarioEmail.Text,
+                        Password = this.txtUsuarioContrasenia.Text,
+                        Nombre = this.txtBackOfficeNombre.Text,
+                        RolId = (int)this.cmbRol.SelectedValue,
+                        Activo = this.chkBackOfficeHabilitado.Checked,
+                        TipoUsuario = "backoffice"
+                    };
+                    ws.InsertarBackoffice(bovo);
                     MessageBox.Show("Se creó BO");
                     break;
+
                 case "M":
+
                     MessageBox.Show("Se modifico BO");
                     break;
                 case "E":
+                    boid = Int32.Parse(this.txtBackOfficeId.Text);
+                    ws.BorrarBackoffice(boid);
                     MessageBox.Show("Se elimino BO");
                     break;
             }
+            
             this.Close();
         }
 
@@ -115,10 +121,21 @@ namespace Presentacion
         private void NuevoBackOffice_Load(object sender, EventArgs e)
         {
             //Identifico el modo que se paso por parametro
+            WebServiceSoapClient ws = new WebServiceSoapClient();
+
+            //Cargo el combo con los roles
+            List<RolVO> lstrol = new List<RolVO>();
+            lstrol = ws.ListarRoles().ToList();
+            this.cmbRol.DataSource = null;
+            this.cmbRol.DataSource = lstrol;
+            this.cmbRol.ValueMember = "IdRol";
+            this.cmbRol.DisplayMember = "Nombre";
+
             switch (lblParametro.Text)
             {
                 case "A":
                     this.Text = "Nuevo BackOffice";
+                    this.txtBackOfficeId.Enabled = false;
                     this.txtUsuarioEmail.Enabled = true;
                     this.txtUsuarioContrasenia.Enabled = true;
                     this.txtBackOfficeNombre.Enabled = true;
@@ -126,6 +143,7 @@ namespace Presentacion
                     break;
                 case "M":
                     this.Text = "Modificar BackOffice";
+                    this.txtBackOfficeId.Enabled = true;
                     this.txtUsuarioEmail.Enabled = false;
                     this.txtUsuarioContrasenia.Enabled = true;
                     this.txtBackOfficeNombre.Enabled = true;
@@ -133,9 +151,10 @@ namespace Presentacion
                     break;
                 case "E":
                     this.Text = "Eliminar BackOffice";
+                    this.txtBackOfficeId.Enabled = true;
                     this.txtUsuarioEmail.Enabled = false;
                     this.txtUsuarioContrasenia.Enabled = false;
-                    this.txtBackOfficeNombre.Enabled = true;
+                    this.txtBackOfficeNombre.Enabled = false;
                     this.cmbRol.Enabled = false;
                     break;
                 default:
@@ -143,7 +162,33 @@ namespace Presentacion
                     break;
             }
           
-            //aca deberia cargar el combo con los roles
+        }
+
+        private void txtBackOfficeId_Validating(object sender, CancelEventArgs e)
+        {
+            if (Int32.Parse(txtBackOfficeId.Text) == 0)
+            {
+                errorProvider.SetError(txtBackOfficeId, "Debe ingresar el id del BackOffice");
+                txtBackOfficeId.Focus();
+            }
+            else
+            {
+                errorProvider.Clear();
+            }
+        }
+
+        private void txtBackOfficeId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Permito ingresar solo un entero
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                errorProvider.SetError(txtBackOfficeId, "Solo se permite ingresar un valor entero");
+                txtBackOfficeId.Focus();
+            }
+            else
+            {
+                errorProvider.Clear();
+            }
         }
     }
 }
