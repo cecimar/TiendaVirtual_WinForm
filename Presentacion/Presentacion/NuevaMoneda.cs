@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Presentacion.WebServiceTV;
 
 namespace Presentacion
 {
@@ -24,10 +25,19 @@ namespace Presentacion
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
+            int monid = 0;
+            WebServiceSoapClient ws = new WebServiceSoapClient();
             switch (lblParametro.Text)
             {
                 case "A":
                     MessageBox.Show("Se creó la Moneda");
+                    MonedaVO monvo = new MonedaVO()
+                    {
+                        Abreviatura = this.txtMonedaAbreviatura.Text,
+                        Descripcion = this.txtMonedaDescripcion.Text,
+                        Cotizacion = Decimal.Parse(txtMonedaCotizacion.Text)
+                    };
+                    ws.InsertarMoneda(monvo);
                     break;
                 case "M":
                     MessageBox.Show("Se modifico la Moneda");
@@ -127,7 +137,6 @@ namespace Presentacion
                     this.txtMonedaAbreviatura.Enabled = true;
                     this.txtMonedaDescripcion.Enabled = true;
                     this.txtMonedaCotizacion.Enabled = true;
-                    this.chkMonedaHabilitada.Enabled = true;
                     break;
                 case "M":
                     this.Text = "Modificar Moneda";
@@ -135,7 +144,6 @@ namespace Presentacion
                     this.txtMonedaAbreviatura.Enabled = true;
                     this.txtMonedaDescripcion.Enabled = true;
                     this.txtMonedaCotizacion.Enabled = true;
-                    this.chkMonedaHabilitada.Enabled = true;
                     break;
                 case "E":
                     this.Text = "Eliminar Moneda";
@@ -143,7 +151,6 @@ namespace Presentacion
                     this.txtMonedaAbreviatura.Enabled = false;
                     this.txtMonedaDescripcion.Enabled = false;
                     this.txtMonedaCotizacion.Enabled = false;
-                    this.chkMonedaHabilitada.Enabled = false;
                     break;
                 default:
                     this.Text = "";
@@ -185,7 +192,7 @@ namespace Presentacion
 
         private void txtMonedaCotizacion_Validating(object sender, CancelEventArgs e)
         {
-            if (float.Parse(txtMonedaCotizacion.Text) == 0)
+            if (Decimal.Parse(txtMonedaCotizacion.Text) == 0)
             {
                 errorProvider.SetError(txtMonedaCotizacion, "Debe ingresar una cotización de la Moneda");
                 txtMonedaCotizacion.Focus();

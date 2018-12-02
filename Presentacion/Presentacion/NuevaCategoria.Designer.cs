@@ -93,7 +93,7 @@
             this.btnGrabar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(128, 37);
-            this.btnGrabar.TabIndex = 4;
+            this.btnGrabar.TabIndex = 5;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.UseVisualStyleBackColor = true;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
@@ -106,7 +106,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(128, 37);
-            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -142,17 +142,22 @@
             this.chkCategoriaHabilitada.Location = new System.Drawing.Point(261, 154);
             this.chkCategoriaHabilitada.Name = "chkCategoriaHabilitada";
             this.chkCategoriaHabilitada.Size = new System.Drawing.Size(18, 17);
-            this.chkCategoriaHabilitada.TabIndex = 22;
+            this.chkCategoriaHabilitada.TabIndex = 4;
             this.chkCategoriaHabilitada.UseVisualStyleBackColor = true;
+            this.chkCategoriaHabilitada.CheckedChanged += new System.EventHandler(this.chkCategoriaHabilitada_CheckedChanged);
             // 
             // txtCategoriaId
             // 
             this.txtCategoriaId.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoriaId.Location = new System.Drawing.Point(261, 13);
+            this.txtCategoriaId.Location = new System.Drawing.Point(268, 5);
             this.txtCategoriaId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCategoriaId.Name = "txtCategoriaId";
             this.txtCategoriaId.Size = new System.Drawing.Size(330, 27);
-            this.txtCategoriaId.TabIndex = 24;
+            this.txtCategoriaId.TabIndex = 1;
+            this.txtCategoriaId.Enter += new System.EventHandler(this.txtCategoriaId_Enter);
+            this.txtCategoriaId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCategoriaId_KeyPress);
+            this.txtCategoriaId.Validating += new System.ComponentModel.CancelEventHandler(this.txtCategoriaId_Validating);
+            this.txtCategoriaId.Validated += new System.EventHandler(this.txtCategoriaId_Validated);
             // 
             // lblCategoriaId
             // 

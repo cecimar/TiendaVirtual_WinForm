@@ -39,8 +39,6 @@
             this.lblMonedaCotizacion = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblParametro = new System.Windows.Forms.Label();
-            this.chkMonedaHabilitada = new System.Windows.Forms.CheckBox();
-            this.lblMonedaHabilitada = new System.Windows.Forms.Label();
             this.txtMonedaId = new System.Windows.Forms.TextBox();
             this.lblMonedaId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
@@ -150,25 +148,6 @@
             this.lblParametro.Text = "Parametro";
             this.lblParametro.Visible = false;
             // 
-            // chkMonedaHabilitada
-            // 
-            this.chkMonedaHabilitada.AutoSize = true;
-            this.chkMonedaHabilitada.Location = new System.Drawing.Point(293, 208);
-            this.chkMonedaHabilitada.Name = "chkMonedaHabilitada";
-            this.chkMonedaHabilitada.Size = new System.Drawing.Size(18, 17);
-            this.chkMonedaHabilitada.TabIndex = 5;
-            this.chkMonedaHabilitada.UseVisualStyleBackColor = true;
-            // 
-            // lblMonedaHabilitada
-            // 
-            this.lblMonedaHabilitada.AutoSize = true;
-            this.lblMonedaHabilitada.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonedaHabilitada.Location = new System.Drawing.Point(49, 211);
-            this.lblMonedaHabilitada.Name = "lblMonedaHabilitada";
-            this.lblMonedaHabilitada.Size = new System.Drawing.Size(93, 19);
-            this.lblMonedaHabilitada.TabIndex = 23;
-            this.lblMonedaHabilitada.Text = "Habilitado:";
-            // 
             // txtMonedaId
             // 
             this.txtMonedaId.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -199,8 +178,6 @@
             this.ClientSize = new System.Drawing.Size(695, 299);
             this.Controls.Add(this.txtMonedaId);
             this.Controls.Add(this.lblMonedaId);
-            this.Controls.Add(this.chkMonedaHabilitada);
-            this.Controls.Add(this.lblMonedaHabilitada);
             this.Controls.Add(this.lblParametro);
             this.Controls.Add(this.txtMonedaCotizacion);
             this.Controls.Add(this.lblMonedaCotizacion);
@@ -237,8 +214,6 @@
         private System.Windows.Forms.Label lblMonedaCotizacion;
         private System.Windows.Forms.ErrorProvider errorProvider;
         public System.Windows.Forms.Label lblParametro;
-        private System.Windows.Forms.CheckBox chkMonedaHabilitada;
-        private System.Windows.Forms.Label lblMonedaHabilitada;
         private System.Windows.Forms.TextBox txtMonedaId;
         private System.Windows.Forms.Label lblMonedaId;
     }

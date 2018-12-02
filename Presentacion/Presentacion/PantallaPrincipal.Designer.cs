@@ -88,7 +88,7 @@
             // crearMonedaToolStripMenuItem
             // 
             this.crearMonedaToolStripMenuItem.Name = "crearMonedaToolStripMenuItem";
-            this.crearMonedaToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.crearMonedaToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.crearMonedaToolStripMenuItem.Text = "Nueva Moneda";
             this.crearMonedaToolStripMenuItem.Click += new System.EventHandler(this.crearMonedaToolStripMenuItem_Click);
             // 
@@ -109,13 +109,13 @@
             // buscarMonedaToolStripMenuItem
             // 
             this.buscarMonedaToolStripMenuItem.Name = "buscarMonedaToolStripMenuItem";
-            this.buscarMonedaToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.buscarMonedaToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.buscarMonedaToolStripMenuItem.Text = "Buscar Moneda";
             // 
             // listarMonedaToolStripMenuItem
             // 
             this.listarMonedaToolStripMenuItem.Name = "listarMonedaToolStripMenuItem";
-            this.listarMonedaToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.listarMonedaToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.listarMonedaToolStripMenuItem.Text = "Listar Moneda";
             // 
             // categoríasToolStripMenuItem
@@ -195,7 +195,7 @@
             // eliminarProductoToolStripMenuItem
             // 
             this.eliminarProductoToolStripMenuItem.Name = "eliminarProductoToolStripMenuItem";
-            this.eliminarProductoToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.eliminarProductoToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.eliminarProductoToolStripMenuItem.Text = "Eliminar Producto";
             this.eliminarProductoToolStripMenuItem.Click += new System.EventHandler(this.eliminarProductoToolStripMenuItem_Click);
             // 
@@ -276,6 +276,7 @@
             this.Name = "PantallaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tienda Virtual - Pantalla Principal";
+            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PantallaPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
