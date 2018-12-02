@@ -24,6 +24,7 @@ namespace Presentacion
             {
                 case "A":
                     this.Text = "Nuevo Producto";
+                    this.txtProductoId.Enabled = false;
                     this.txtProductoNombre.Enabled = true;
                     this.txtProductoDescripcion.Enabled = true;
                     this.cmbCategoria.Enabled = true;
@@ -33,6 +34,7 @@ namespace Presentacion
                     break;
                 case "M":
                     this.Text = "Modificar Producto";
+                    this.txtProductoId.Enabled = true;
                     this.txtProductoNombre.Enabled = true;
                     this.txtProductoDescripcion.Enabled = true;
                     this.cmbCategoria.Enabled = true;
@@ -42,6 +44,7 @@ namespace Presentacion
                     break;
                 case "E":
                     this.Text = "Eliminar Producto";
+                    this.txtProductoId.Enabled = true;
                     this.txtProductoNombre.Enabled = false;
                     this.txtProductoDescripcion.Enabled = false;
                     this.cmbCategoria.Enabled = false;
@@ -66,18 +69,32 @@ namespace Presentacion
             int istock = Int32.Parse(this.txtProductoStock.Text);
             Image ifoto = this.PicBoxProductoFoto.Image;
 
+            /*ProductoVO = new ProductoVO()
+            {
+                //IdProducto = idp;
+                Nombre = this.txtProductoNombre.Text;
+                Descripcion = this.txtProductoDescripcion.Text;
+                Foto = this.PicBoxProductoFoto.Image;
+                Precio = float.Parse(this.txtProductoPrecio.Text);
+                Stock = Int32.Parse(this.txtProductoStock.Text);
+                FechaAlta = alta;
+                Habilitado = this.chkProductoHabilitado.Value;
+                IdCategoria = 1;
+            }*/
+
             switch (lblParametro.Text)
             {
                 case "A":
                     //llamo al WS con las variables
+                    //ws.InsertarProducto();
                     MessageBox.Show("Se creó el Producto" + snombre, sdescripcion);
                     break;
                 case "M":
-                    //llamo al WS con las variables
+                    //ws.ModificarProducto();
                     MessageBox.Show("Se modifico el Producto" + snombre);
                     break;
                 case "E":
-                    //llamo al WS con las variables
+                    //ws.EliminarProducto();
                     MessageBox.Show("Se elimino el Producto" + snombre);
                     break;
             }
@@ -163,9 +180,10 @@ namespace Presentacion
 
         private void txtProductoStock_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //Permito ingresar solo un entero
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                errorProvider.SetError(txtProductoStock, "Solo se permite ingresar un valor numérico");
+                errorProvider.SetError(txtProductoStock, "Solo se permite ingresar un valor entero");
                 txtProductoStock.Focus();
             }
             else
@@ -176,6 +194,7 @@ namespace Presentacion
 
         private void txtProductoPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //Permito ingresar solo un real
             if (!((e.KeyChar >= 48 && e.KeyChar <= 59) || (e.KeyChar == 8) || (e.KeyChar == 13)))
             {
                 errorProvider.SetError(txtProductoPrecio, "Solo se permite ingresar un valor real");
@@ -194,6 +213,35 @@ namespace Presentacion
 
         private void txtProductoStock_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void txtProductoId_Validating(object sender, CancelEventArgs e)
+        {
+            if (Int32.Parse(txtProductoId.Text) == 0)
+            {
+                errorProvider.SetError(txtProductoId, "Debe ingresar el id del Producto");
+                txtProductoId.Focus();
+            }
+            else
+            {
+                errorProvider.Clear();
+            }
+
+        }
+
+        private void txtProductoId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Permito ingresar solo un entero
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                errorProvider.SetError(txtProductoId, "Solo se permite ingresar un valor entero");
+                txtProductoId.Focus();
+            }
+            else
+            {
+                errorProvider.Clear();
+            }
 
         }
     }

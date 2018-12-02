@@ -41,6 +41,10 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblParametro = new System.Windows.Forms.Label();
+            this.chkBackOfficeHabilitado = new System.Windows.Forms.CheckBox();
+            this.lblBackOfficeHabilitado = new System.Windows.Forms.Label();
+            this.txtBackOfficeId = new System.Windows.Forms.TextBox();
+            this.lblBackOfficeId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +52,7 @@
             // 
             this.cmbRol.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRol.FormattingEnabled = true;
-            this.cmbRol.Location = new System.Drawing.Point(356, 234);
+            this.cmbRol.Location = new System.Drawing.Point(356, 231);
             this.cmbRol.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(371, 27);
@@ -60,7 +64,7 @@
             // 
             this.lblBackOfficeNombre.AutoSize = true;
             this.lblBackOfficeNombre.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBackOfficeNombre.Location = new System.Drawing.Point(79, 169);
+            this.lblBackOfficeNombre.Location = new System.Drawing.Point(79, 182);
             this.lblBackOfficeNombre.Name = "lblBackOfficeNombre";
             this.lblBackOfficeNombre.Size = new System.Drawing.Size(106, 19);
             this.lblBackOfficeNombre.TabIndex = 27;
@@ -70,7 +74,7 @@
             // txtBackOfficeNombre
             // 
             this.txtBackOfficeNombre.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBackOfficeNombre.Location = new System.Drawing.Point(356, 169);
+            this.txtBackOfficeNombre.Location = new System.Drawing.Point(356, 182);
             this.txtBackOfficeNombre.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtBackOfficeNombre.Name = "txtBackOfficeNombre";
             this.txtBackOfficeNombre.Size = new System.Drawing.Size(371, 27);
@@ -82,7 +86,7 @@
             // 
             this.lblRolNombre.AutoSize = true;
             this.lblRolNombre.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRolNombre.Location = new System.Drawing.Point(79, 234);
+            this.lblRolNombre.Location = new System.Drawing.Point(79, 231);
             this.lblRolNombre.Name = "lblRolNombre";
             this.lblRolNombre.Size = new System.Drawing.Size(65, 19);
             this.lblRolNombre.TabIndex = 23;
@@ -91,7 +95,7 @@
             // txtUsuarioContrasenia
             // 
             this.txtUsuarioContrasenia.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuarioContrasenia.Location = new System.Drawing.Point(356, 108);
+            this.txtUsuarioContrasenia.Location = new System.Drawing.Point(356, 133);
             this.txtUsuarioContrasenia.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtUsuarioContrasenia.Name = "txtUsuarioContrasenia";
             this.txtUsuarioContrasenia.PasswordChar = '*';
@@ -102,7 +106,7 @@
             // txtUsuarioEmail
             // 
             this.txtUsuarioEmail.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuarioEmail.Location = new System.Drawing.Point(356, 50);
+            this.txtUsuarioEmail.Location = new System.Drawing.Point(356, 86);
             this.txtUsuarioEmail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtUsuarioEmail.Name = "txtUsuarioEmail";
             this.txtUsuarioEmail.Size = new System.Drawing.Size(371, 27);
@@ -114,7 +118,7 @@
             // 
             this.lblUsuarioContrasenia.AutoSize = true;
             this.lblUsuarioContrasenia.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuarioContrasenia.Location = new System.Drawing.Point(79, 108);
+            this.lblUsuarioContrasenia.Location = new System.Drawing.Point(79, 133);
             this.lblUsuarioContrasenia.Name = "lblUsuarioContrasenia";
             this.lblUsuarioContrasenia.Size = new System.Drawing.Size(135, 19);
             this.lblUsuarioContrasenia.TabIndex = 20;
@@ -124,7 +128,7 @@
             // 
             this.lblUsuarioEmail.AutoSize = true;
             this.lblUsuarioEmail.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuarioEmail.Location = new System.Drawing.Point(79, 50);
+            this.lblUsuarioEmail.Location = new System.Drawing.Point(79, 86);
             this.lblUsuarioEmail.Name = "lblUsuarioEmail";
             this.lblUsuarioEmail.Size = new System.Drawing.Size(81, 19);
             this.lblUsuarioEmail.TabIndex = 19;
@@ -170,12 +174,54 @@
             this.lblParametro.Text = "Parametro";
             this.lblParametro.Visible = false;
             // 
+            // chkBackOfficeHabilitado
+            // 
+            this.chkBackOfficeHabilitado.AutoSize = true;
+            this.chkBackOfficeHabilitado.Location = new System.Drawing.Point(356, 280);
+            this.chkBackOfficeHabilitado.Name = "chkBackOfficeHabilitado";
+            this.chkBackOfficeHabilitado.Size = new System.Drawing.Size(18, 17);
+            this.chkBackOfficeHabilitado.TabIndex = 33;
+            this.chkBackOfficeHabilitado.UseVisualStyleBackColor = true;
+            // 
+            // lblBackOfficeHabilitado
+            // 
+            this.lblBackOfficeHabilitado.AutoSize = true;
+            this.lblBackOfficeHabilitado.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBackOfficeHabilitado.Location = new System.Drawing.Point(79, 280);
+            this.lblBackOfficeHabilitado.Name = "lblBackOfficeHabilitado";
+            this.lblBackOfficeHabilitado.Size = new System.Drawing.Size(93, 19);
+            this.lblBackOfficeHabilitado.TabIndex = 32;
+            this.lblBackOfficeHabilitado.Text = "Habilitado:";
+            // 
+            // txtBackOfficeId
+            // 
+            this.txtBackOfficeId.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBackOfficeId.Location = new System.Drawing.Point(356, 34);
+            this.txtBackOfficeId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBackOfficeId.Name = "txtBackOfficeId";
+            this.txtBackOfficeId.Size = new System.Drawing.Size(371, 27);
+            this.txtBackOfficeId.TabIndex = 35;
+            // 
+            // lblBackOfficeId
+            // 
+            this.lblBackOfficeId.AutoSize = true;
+            this.lblBackOfficeId.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBackOfficeId.Location = new System.Drawing.Point(79, 34);
+            this.lblBackOfficeId.Name = "lblBackOfficeId";
+            this.lblBackOfficeId.Size = new System.Drawing.Size(118, 19);
+            this.lblBackOfficeId.TabIndex = 34;
+            this.lblBackOfficeId.Text = "BackOffice Id:";
+            // 
             // NuevoBackOffice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(792, 398);
+            this.Controls.Add(this.txtBackOfficeId);
+            this.Controls.Add(this.lblBackOfficeId);
+            this.Controls.Add(this.chkBackOfficeHabilitado);
+            this.Controls.Add(this.lblBackOfficeHabilitado);
             this.Controls.Add(this.lblParametro);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGrabar);
@@ -215,5 +261,9 @@
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.ErrorProvider errorProvider;
         public System.Windows.Forms.Label lblParametro;
+        private System.Windows.Forms.CheckBox chkBackOfficeHabilitado;
+        private System.Windows.Forms.Label lblBackOfficeHabilitado;
+        private System.Windows.Forms.TextBox txtBackOfficeId;
+        private System.Windows.Forms.Label lblBackOfficeId;
     }
 }

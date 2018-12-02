@@ -37,6 +37,10 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblParametro = new System.Windows.Forms.Label();
+            this.lblCategoriaHabilitada = new System.Windows.Forms.Label();
+            this.chkCategoriaHabilitada = new System.Windows.Forms.CheckBox();
+            this.txtCategoriaId = new System.Windows.Forms.TextBox();
+            this.lblCategoriaId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +48,7 @@
             // 
             this.lblCategoriaNombre.AutoSize = true;
             this.lblCategoriaNombre.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoriaNombre.Location = new System.Drawing.Point(9, 75);
+            this.lblCategoriaNombre.Location = new System.Drawing.Point(14, 59);
             this.lblCategoriaNombre.Name = "lblCategoriaNombre";
             this.lblCategoriaNombre.Size = new System.Drawing.Size(182, 19);
             this.lblCategoriaNombre.TabIndex = 0;
@@ -55,7 +59,7 @@
             // 
             this.lblCategoriaDescripcion.AutoSize = true;
             this.lblCategoriaDescripcion.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoriaDescripcion.Location = new System.Drawing.Point(12, 124);
+            this.lblCategoriaDescripcion.Location = new System.Drawing.Point(17, 108);
             this.lblCategoriaDescripcion.Name = "lblCategoriaDescripcion";
             this.lblCategoriaDescripcion.Size = new System.Drawing.Size(108, 19);
             this.lblCategoriaDescripcion.TabIndex = 1;
@@ -64,7 +68,7 @@
             // txtCategoriaNombre
             // 
             this.txtCategoriaNombre.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoriaNombre.Location = new System.Drawing.Point(256, 75);
+            this.txtCategoriaNombre.Location = new System.Drawing.Point(261, 59);
             this.txtCategoriaNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCategoriaNombre.Name = "txtCategoriaNombre";
             this.txtCategoriaNombre.Size = new System.Drawing.Size(330, 27);
@@ -75,7 +79,7 @@
             // txtCategoriaDescripcion
             // 
             this.txtCategoriaDescripcion.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoriaDescripcion.Location = new System.Drawing.Point(256, 124);
+            this.txtCategoriaDescripcion.Location = new System.Drawing.Point(261, 108);
             this.txtCategoriaDescripcion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCategoriaDescripcion.Name = "txtCategoriaDescripcion";
             this.txtCategoriaDescripcion.Size = new System.Drawing.Size(330, 27);
@@ -85,7 +89,7 @@
             // 
             this.btnGrabar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGrabar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrabar.Location = new System.Drawing.Point(176, 184);
+            this.btnGrabar.Location = new System.Drawing.Point(176, 206);
             this.btnGrabar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(128, 37);
@@ -98,7 +102,7 @@
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(310, 184);
+            this.btnCancelar.Location = new System.Drawing.Point(310, 206);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(128, 37);
@@ -114,12 +118,51 @@
             // lblParametro
             // 
             this.lblParametro.AutoSize = true;
-            this.lblParametro.Location = new System.Drawing.Point(513, 9);
+            this.lblParametro.Location = new System.Drawing.Point(506, 224);
             this.lblParametro.Name = "lblParametro";
             this.lblParametro.Size = new System.Drawing.Size(85, 19);
             this.lblParametro.TabIndex = 20;
             this.lblParametro.Text = "Parametro";
             this.lblParametro.Visible = false;
+            // 
+            // lblCategoriaHabilitada
+            // 
+            this.lblCategoriaHabilitada.AutoSize = true;
+            this.lblCategoriaHabilitada.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoriaHabilitada.Location = new System.Drawing.Point(17, 157);
+            this.lblCategoriaHabilitada.Name = "lblCategoriaHabilitada";
+            this.lblCategoriaHabilitada.Size = new System.Drawing.Size(93, 19);
+            this.lblCategoriaHabilitada.TabIndex = 21;
+            this.lblCategoriaHabilitada.Text = "Habilitado:";
+            this.lblCategoriaHabilitada.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // chkCategoriaHabilitada
+            // 
+            this.chkCategoriaHabilitada.AutoSize = true;
+            this.chkCategoriaHabilitada.Location = new System.Drawing.Point(261, 154);
+            this.chkCategoriaHabilitada.Name = "chkCategoriaHabilitada";
+            this.chkCategoriaHabilitada.Size = new System.Drawing.Size(18, 17);
+            this.chkCategoriaHabilitada.TabIndex = 22;
+            this.chkCategoriaHabilitada.UseVisualStyleBackColor = true;
+            // 
+            // txtCategoriaId
+            // 
+            this.txtCategoriaId.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCategoriaId.Location = new System.Drawing.Point(261, 13);
+            this.txtCategoriaId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCategoriaId.Name = "txtCategoriaId";
+            this.txtCategoriaId.Size = new System.Drawing.Size(330, 27);
+            this.txtCategoriaId.TabIndex = 24;
+            // 
+            // lblCategoriaId
+            // 
+            this.lblCategoriaId.AutoSize = true;
+            this.lblCategoriaId.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoriaId.Location = new System.Drawing.Point(14, 13);
+            this.lblCategoriaId.Name = "lblCategoriaId";
+            this.lblCategoriaId.Size = new System.Drawing.Size(110, 19);
+            this.lblCategoriaId.TabIndex = 23;
+            this.lblCategoriaId.Text = "Categoría Id:";
             // 
             // NuevaCategoria
             // 
@@ -127,6 +170,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(610, 256);
+            this.Controls.Add(this.txtCategoriaId);
+            this.Controls.Add(this.lblCategoriaId);
+            this.Controls.Add(this.chkCategoriaHabilitada);
+            this.Controls.Add(this.lblCategoriaHabilitada);
             this.Controls.Add(this.lblParametro);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGrabar);
@@ -159,6 +206,10 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ErrorProvider errorProvider;
         public System.Windows.Forms.Label lblParametro;
+        private System.Windows.Forms.Label lblCategoriaHabilitada;
+        private System.Windows.Forms.CheckBox chkCategoriaHabilitada;
+        private System.Windows.Forms.TextBox txtCategoriaId;
+        private System.Windows.Forms.Label lblCategoriaId;
     }
 }
 

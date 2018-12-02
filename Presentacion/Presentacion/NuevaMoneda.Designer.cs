@@ -39,6 +39,10 @@
             this.lblMonedaCotizacion = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblParametro = new System.Windows.Forms.Label();
+            this.chkMonedaHabilitada = new System.Windows.Forms.CheckBox();
+            this.lblMonedaHabilitada = new System.Windows.Forms.Label();
+            this.txtMonedaId = new System.Windows.Forms.TextBox();
+            this.lblMonedaId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +50,7 @@
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(349, 224);
+            this.btnCancelar.Location = new System.Drawing.Point(373, 251);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(128, 37);
@@ -59,7 +63,7 @@
             // 
             this.btnGrabar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGrabar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrabar.Location = new System.Drawing.Point(214, 224);
+            this.btnGrabar.Location = new System.Drawing.Point(238, 251);
             this.btnGrabar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(128, 37);
@@ -71,28 +75,28 @@
             // txtMonedaDescripcion
             // 
             this.txtMonedaDescripcion.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMonedaDescripcion.Location = new System.Drawing.Point(269, 81);
+            this.txtMonedaDescripcion.Location = new System.Drawing.Point(293, 108);
             this.txtMonedaDescripcion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMonedaDescripcion.Name = "txtMonedaDescripcion";
             this.txtMonedaDescripcion.Size = new System.Drawing.Size(330, 27);
-            this.txtMonedaDescripcion.TabIndex = 9;
+            this.txtMonedaDescripcion.TabIndex = 3;
             this.txtMonedaDescripcion.Validated += new System.EventHandler(this.txtMonedaDescripcion_Validated);
             // 
             // txtMonedaAbreviatura
             // 
             this.txtMonedaAbreviatura.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMonedaAbreviatura.Location = new System.Drawing.Point(269, 32);
+            this.txtMonedaAbreviatura.Location = new System.Drawing.Point(293, 59);
             this.txtMonedaAbreviatura.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMonedaAbreviatura.Name = "txtMonedaAbreviatura";
             this.txtMonedaAbreviatura.Size = new System.Drawing.Size(330, 27);
-            this.txtMonedaAbreviatura.TabIndex = 8;
+            this.txtMonedaAbreviatura.TabIndex = 2;
             this.txtMonedaAbreviatura.Validated += new System.EventHandler(this.txtMonedaAbreviatura_Validated);
             // 
             // lblCategoriaDescripcion
             // 
             this.lblCategoriaDescripcion.AutoSize = true;
             this.lblCategoriaDescripcion.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoriaDescripcion.Location = new System.Drawing.Point(25, 81);
+            this.lblCategoriaDescripcion.Location = new System.Drawing.Point(49, 108);
             this.lblCategoriaDescripcion.Name = "lblCategoriaDescripcion";
             this.lblCategoriaDescripcion.Size = new System.Drawing.Size(108, 19);
             this.lblCategoriaDescripcion.TabIndex = 7;
@@ -103,7 +107,7 @@
             // 
             this.lblCategoriaNombre.AutoSize = true;
             this.lblCategoriaNombre.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoriaNombre.Location = new System.Drawing.Point(22, 32);
+            this.lblCategoriaNombre.Location = new System.Drawing.Point(46, 59);
             this.lblCategoriaNombre.Name = "lblCategoriaNombre";
             this.lblCategoriaNombre.Size = new System.Drawing.Size(191, 19);
             this.lblCategoriaNombre.TabIndex = 6;
@@ -113,19 +117,20 @@
             // txtMonedaCotizacion
             // 
             this.txtMonedaCotizacion.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMonedaCotizacion.Location = new System.Drawing.Point(269, 131);
+            this.txtMonedaCotizacion.Location = new System.Drawing.Point(293, 158);
             this.txtMonedaCotizacion.Name = "txtMonedaCotizacion";
             this.txtMonedaCotizacion.Size = new System.Drawing.Size(330, 27);
-            this.txtMonedaCotizacion.TabIndex = 15;
+            this.txtMonedaCotizacion.TabIndex = 4;
             this.txtMonedaCotizacion.TextChanged += new System.EventHandler(this.txtMonedaCotizacion_TextChanged);
             this.txtMonedaCotizacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonedaCotizacion_KeyPress);
+            this.txtMonedaCotizacion.Validating += new System.ComponentModel.CancelEventHandler(this.txtMonedaCotizacion_Validating);
             this.txtMonedaCotizacion.Validated += new System.EventHandler(this.txtMonedaCotizacion_Validated);
             // 
             // lblMonedaCotizacion
             // 
             this.lblMonedaCotizacion.AutoSize = true;
             this.lblMonedaCotizacion.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonedaCotizacion.Location = new System.Drawing.Point(25, 131);
+            this.lblMonedaCotizacion.Location = new System.Drawing.Point(49, 158);
             this.lblMonedaCotizacion.Name = "lblMonedaCotizacion";
             this.lblMonedaCotizacion.Size = new System.Drawing.Size(122, 19);
             this.lblMonedaCotizacion.TabIndex = 14;
@@ -145,12 +150,57 @@
             this.lblParametro.Text = "Parametro";
             this.lblParametro.Visible = false;
             // 
+            // chkMonedaHabilitada
+            // 
+            this.chkMonedaHabilitada.AutoSize = true;
+            this.chkMonedaHabilitada.Location = new System.Drawing.Point(293, 208);
+            this.chkMonedaHabilitada.Name = "chkMonedaHabilitada";
+            this.chkMonedaHabilitada.Size = new System.Drawing.Size(18, 17);
+            this.chkMonedaHabilitada.TabIndex = 5;
+            this.chkMonedaHabilitada.UseVisualStyleBackColor = true;
+            // 
+            // lblMonedaHabilitada
+            // 
+            this.lblMonedaHabilitada.AutoSize = true;
+            this.lblMonedaHabilitada.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonedaHabilitada.Location = new System.Drawing.Point(49, 211);
+            this.lblMonedaHabilitada.Name = "lblMonedaHabilitada";
+            this.lblMonedaHabilitada.Size = new System.Drawing.Size(93, 19);
+            this.lblMonedaHabilitada.TabIndex = 23;
+            this.lblMonedaHabilitada.Text = "Habilitado:";
+            // 
+            // txtMonedaId
+            // 
+            this.txtMonedaId.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMonedaId.Location = new System.Drawing.Point(293, 13);
+            this.txtMonedaId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMonedaId.Name = "txtMonedaId";
+            this.txtMonedaId.Size = new System.Drawing.Size(330, 27);
+            this.txtMonedaId.TabIndex = 1;
+            this.txtMonedaId.TextChanged += new System.EventHandler(this.txtMonedaId_TextChanged);
+            this.txtMonedaId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonedaId_KeyPress);
+            this.txtMonedaId.Validating += new System.ComponentModel.CancelEventHandler(this.txtMonedaId_Validating);
+            // 
+            // lblMonedaId
+            // 
+            this.lblMonedaId.AutoSize = true;
+            this.lblMonedaId.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonedaId.Location = new System.Drawing.Point(46, 13);
+            this.lblMonedaId.Name = "lblMonedaId";
+            this.lblMonedaId.Size = new System.Drawing.Size(95, 19);
+            this.lblMonedaId.TabIndex = 25;
+            this.lblMonedaId.Text = "Moneda Id:";
+            // 
             // NuevaMoneda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(695, 299);
+            this.Controls.Add(this.txtMonedaId);
+            this.Controls.Add(this.lblMonedaId);
+            this.Controls.Add(this.chkMonedaHabilitada);
+            this.Controls.Add(this.lblMonedaHabilitada);
             this.Controls.Add(this.lblParametro);
             this.Controls.Add(this.txtMonedaCotizacion);
             this.Controls.Add(this.lblMonedaCotizacion);
@@ -187,5 +237,9 @@
         private System.Windows.Forms.Label lblMonedaCotizacion;
         private System.Windows.Forms.ErrorProvider errorProvider;
         public System.Windows.Forms.Label lblParametro;
+        private System.Windows.Forms.CheckBox chkMonedaHabilitada;
+        private System.Windows.Forms.Label lblMonedaHabilitada;
+        private System.Windows.Forms.TextBox txtMonedaId;
+        private System.Windows.Forms.Label lblMonedaId;
     }
 }

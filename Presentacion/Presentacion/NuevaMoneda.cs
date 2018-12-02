@@ -80,7 +80,7 @@ namespace Presentacion
 
         private void txtMonedaCotizacion_Validated(object sender, EventArgs e)
         {
-            if (float.Parse(txtMonedaCotizacion.Text) == 0)
+          /*  if (float.Parse(txtMonedaCotizacion.Text) == 0)
             {
                 errorProvider.SetError(txtMonedaCotizacion, "Debe ingresar una cotización de la Moneda");
                 txtMonedaCotizacion.Focus();
@@ -88,7 +88,7 @@ namespace Presentacion
             else
             {
                 errorProvider.Clear();
-            }
+            }*/
         }
 
         private void txtMonedaAbreviatura_Validated(object sender, EventArgs e)
@@ -123,17 +123,78 @@ namespace Presentacion
             {
                 case "A":
                     this.Text = "Nueva Moneda";
+                    this.txtMonedaId.Enabled = false;
+                    this.txtMonedaAbreviatura.Enabled = true;
+                    this.txtMonedaDescripcion.Enabled = true;
+                    this.txtMonedaCotizacion.Enabled = true;
+                    this.chkMonedaHabilitada.Enabled = true;
                     break;
                 case "M":
                     this.Text = "Modificar Moneda";
+                    this.txtMonedaId.Enabled = true;
+                    this.txtMonedaAbreviatura.Enabled = true;
+                    this.txtMonedaDescripcion.Enabled = true;
+                    this.txtMonedaCotizacion.Enabled = true;
+                    this.chkMonedaHabilitada.Enabled = true;
                     break;
                 case "E":
                     this.Text = "Eliminar Moneda";
+                    this.txtMonedaId.Enabled = true;
+                    this.txtMonedaAbreviatura.Enabled = false;
+                    this.txtMonedaDescripcion.Enabled = false;
+                    this.txtMonedaCotizacion.Enabled = false;
+                    this.chkMonedaHabilitada.Enabled = false;
                     break;
                 default:
                     this.Text = "";
                     break;
             }
+        }
+
+        private void txtMonedaId_Validating(object sender, CancelEventArgs e)
+        {
+            if (Int32.Parse(txtMonedaId.Text) == 0)
+            {
+                errorProvider.SetError(txtMonedaId, "Debe ingresar el id de la moneda");
+                txtMonedaId.Focus();
+            }
+            else
+            {
+                errorProvider.Clear();
+            }
+        }
+
+        private void txtMonedaId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMonedaId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Permito ingresar solo un entero
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                errorProvider.SetError(txtMonedaId, "Solo se permite ingresar un valor entero");
+                txtMonedaId.Focus();
+            }
+            else
+            {
+                errorProvider.Clear();
+            }
+        }
+
+        private void txtMonedaCotizacion_Validating(object sender, CancelEventArgs e)
+        {
+            if (float.Parse(txtMonedaCotizacion.Text) == 0)
+            {
+                errorProvider.SetError(txtMonedaCotizacion, "Debe ingresar una cotización de la Moneda");
+                txtMonedaCotizacion.Focus();
+            }
+            else
+            {
+                errorProvider.Clear();
+            }
+
         }
     }
 }
