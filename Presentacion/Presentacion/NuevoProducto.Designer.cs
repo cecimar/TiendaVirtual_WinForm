@@ -51,6 +51,7 @@
             this.lblProductoHabilitada = new System.Windows.Forms.Label();
             this.txtProductoId = new System.Windows.Forms.TextBox();
             this.lblProductoId = new System.Windows.Forms.Label();
+            this.lblNombreFoto = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxProductoFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -208,7 +209,7 @@
             this.PicBoxProductoFoto.Location = new System.Drawing.Point(307, 293);
             this.PicBoxProductoFoto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PicBoxProductoFoto.Name = "PicBoxProductoFoto";
-            this.PicBoxProductoFoto.Size = new System.Drawing.Size(150, 127);
+            this.PicBoxProductoFoto.Size = new System.Drawing.Size(330, 127);
             this.PicBoxProductoFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PicBoxProductoFoto.TabIndex = 17;
             this.PicBoxProductoFoto.TabStop = false;
@@ -277,12 +278,22 @@
             this.lblProductoId.TabIndex = 25;
             this.lblProductoId.Text = "Producto Id:";
             // 
+            // lblNombreFoto
+            // 
+            this.lblNombreFoto.AutoSize = true;
+            this.lblNombreFoto.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreFoto.Location = new System.Drawing.Point(372, 424);
+            this.lblNombreFoto.Name = "lblNombreFoto";
+            this.lblNombreFoto.Size = new System.Drawing.Size(0, 16);
+            this.lblNombreFoto.TabIndex = 26;
+            // 
             // NuevoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(705, 543);
+            this.Controls.Add(this.lblNombreFoto);
             this.Controls.Add(this.txtProductoId);
             this.Controls.Add(this.lblProductoId);
             this.Controls.Add(this.chkProductoHabilitado);
@@ -343,5 +354,6 @@
         private System.Windows.Forms.Label lblProductoHabilitada;
         private System.Windows.Forms.TextBox txtProductoId;
         private System.Windows.Forms.Label lblProductoId;
+        private System.Windows.Forms.Label lblNombreFoto;
     }
 }

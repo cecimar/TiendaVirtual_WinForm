@@ -85,7 +85,7 @@ namespace Presentacion
                         IdCategoria = (int)this.cmbCategoria.SelectedValue,
                         Precio = Decimal.Parse(this.txtProductoPrecio.Text),
                         Stock = Int32.Parse(this.txtProductoStock.Text),
-                        Foto = "foto1.jpg",
+                        Foto = this.lblNombreFoto.Text,
                         FechaAlta = DateTime.Today,
                         Habilitado = this.chkProductoHabilitado.Checked
                     };
@@ -95,10 +95,11 @@ namespace Presentacion
                     break;
                 case "M":
                     //ws.ModificarProducto();
-                    MessageBox.Show("Se modifico el Producto");
+                    MessageBox.Show("Aun no implementado");
                     break;
                 case "E":
-                    //ws.EliminarProducto();
+                    proid = Int32.Parse(this.txtProductoId.Text);
+                    ws.BorrarProducto(proid);
                     MessageBox.Show("Se elimino el Producto");
                     break;
             }
@@ -124,6 +125,7 @@ namespace Presentacion
                 {
                     string imagen = openFileDialog1.FileName;
                     PicBoxProductoFoto.Image = Image.FromFile(imagen);
+                    lblNombreFoto.Text = openFileDialog1.SafeFileName;
                 }
             }
             catch (Exception ex)

@@ -160,5 +160,44 @@ namespace Presentacion
             frm.lblParametro.Text = "E";
             frm.Show();
         }
+
+        private void listarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void listarProductosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ListarObjeto frm = new ListarObjeto();
+            frm.lblParametroListar.Text = "Producto";
+            frm.Show();
+        }
+
+        private void listarBackOfficeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListarObjeto frm = new ListarObjeto();
+            frm.lblParametroListar.Text = "BackOffice";
+            frm.Show();
+        }
+
+        private void listarRolesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListarObjeto frm = new ListarObjeto();
+            frm.lblParametroListar.Text = "Rol";
+            frm.Show();
+        }
+
+        private void listarCategoríasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListarObjeto frm = new ListarObjeto();
+            frm.lblParametroListar.Text = "Categoria";
+            frm.Show();
+        }
+
+        private void listarMonedaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListarObjeto frm = new ListarObjeto();
+            frm.lblParametroListar.Text = "Moneda";
+            frm.Show();
+        }
     }
 }
