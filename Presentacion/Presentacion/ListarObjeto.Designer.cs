@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.grdLista = new System.Windows.Forms.DataGridView();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.lblParametroListar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grdLista)).BeginInit();
             this.SuspendLayout();
@@ -45,19 +45,20 @@
             this.grdLista.RowTemplate.Height = 24;
             this.grdLista.Size = new System.Drawing.Size(825, 438);
             this.grdLista.TabIndex = 10;
+            this.grdLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdLista_CellDoubleClick);
             // 
-            // btnBuscar
+            // btnCerrar
             // 
-            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBuscar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(604, 484);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(128, 37);
-            this.btnBuscar.TabIndex = 9;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnGrabar_Click);
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.Location = new System.Drawing.Point(604, 484);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(128, 37);
+            this.btnCerrar.TabIndex = 9;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // lblParametroListar
             // 
@@ -77,7 +78,7 @@
             this.ClientSize = new System.Drawing.Size(900, 534);
             this.Controls.Add(this.lblParametroListar);
             this.Controls.Add(this.grdLista);
-            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.btnCerrar);
             this.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
@@ -94,7 +95,7 @@
 
         #endregion
         private System.Windows.Forms.DataGridView grdLista;
-        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnCerrar;
         public System.Windows.Forms.Label lblParametroListar;
     }
 }

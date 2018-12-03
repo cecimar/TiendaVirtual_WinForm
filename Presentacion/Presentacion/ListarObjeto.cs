@@ -79,6 +79,12 @@ namespace Presentacion
                     break;
             }
         }
+
+        private void grdLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show(grdLista.CurrentRow.Cells[0].Value.ToString());
+
+        }
     }
 }
 
