@@ -1,6 +1,6 @@
 ﻿namespace Presentacion
 {
-    partial class frmLogin
+    partial class wfLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -101,7 +101,7 @@
             this.lblUsuarioEmail.TabIndex = 31;
             this.lblUsuarioEmail.Text = "Email (*):";
             // 
-            // frmLogin
+            // wfLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -115,10 +115,11 @@
             this.Controls.Add(this.lblUsuarioEmail);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmLogin";
+            this.Name = "wfLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.wfLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

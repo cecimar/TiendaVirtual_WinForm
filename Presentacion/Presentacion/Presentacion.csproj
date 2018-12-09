@@ -62,11 +62,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="wfLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="wfLogin.Designer.cs">
+      <DependentUpon>wfLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="NuevaCategoria.cs">
       <SubType>Form</SubType>
@@ -139,8 +139,8 @@
     <EmbeddedResource Include="ListarObjeto.resx">
       <DependentUpon>ListarObjeto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="wfLogin.resx">
+      <DependentUpon>wfLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NuevaCategoria.resx">
       <DependentUpon>NuevaCategoria.cs</DependentUpon>

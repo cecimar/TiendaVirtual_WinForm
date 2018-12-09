@@ -118,7 +118,7 @@
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(128, 37);
             this.btnGrabar.TabIndex = 9;
-            this.btnGrabar.Text = "Grabar";
+            this.btnGrabar.Text = "Aceptar";
             this.btnGrabar.UseVisualStyleBackColor = true;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
