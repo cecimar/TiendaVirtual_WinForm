@@ -54,7 +54,7 @@ namespace Presentacion
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo modificar el nombre de la Categoría");
+                        MessageBox.Show(err.ToString());
                     }
                     break;
                 case "MD":
@@ -67,7 +67,7 @@ namespace Presentacion
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo modificar la descripcion de la Categoría");
+                        MessageBox.Show(err.ToString());
                     }
                     break;
                 case "E":
@@ -79,7 +79,7 @@ namespace Presentacion
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo modificar la Categoría");
+                        MessageBox.Show(err.ToString()); 
                     }
                     break;
                 default:

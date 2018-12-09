@@ -155,7 +155,7 @@
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(144, 44);
             this.btnGrabar.TabIndex = 29;
-            this.btnGrabar.Text = "Grabar";
+            this.btnGrabar.Text = "Aceptar";
             this.btnGrabar.UseVisualStyleBackColor = true;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
@@ -250,22 +250,21 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cmbRol;
         private System.Windows.Forms.Label lblBackOfficeNombre;
-        private System.Windows.Forms.TextBox txtBackOfficeNombre;
         private System.Windows.Forms.Label lblRolNombre;
-        private System.Windows.Forms.TextBox txtUsuarioContrasenia;
-        private System.Windows.Forms.TextBox txtUsuarioEmail;
         private System.Windows.Forms.Label lblUsuarioContrasenia;
         private System.Windows.Forms.Label lblUsuarioEmail;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.ErrorProvider errorProvider;
         public System.Windows.Forms.Label lblParametro;
-        private System.Windows.Forms.CheckBox chkBackOfficeHabilitado;
         private System.Windows.Forms.Label lblBackOfficeHabilitado;
-        private System.Windows.Forms.TextBox txtBackOfficeId;
         private System.Windows.Forms.Label lblBackOfficeId;
+        public System.Windows.Forms.ComboBox cmbRol;
+        public System.Windows.Forms.TextBox txtBackOfficeNombre;
+        public System.Windows.Forms.TextBox txtUsuarioContrasenia;
+        public System.Windows.Forms.TextBox txtUsuarioEmail;
+        public System.Windows.Forms.CheckBox chkBackOfficeHabilitado;
+        public System.Windows.Forms.TextBox txtBackOfficeId;
     }
 }

@@ -37,6 +37,7 @@ namespace Presentacion
         {
             int boid;
             WebServiceSoapClient ws = new WebServiceSoapClient();
+            TipoError err;
 
             switch (lblParametro.Text)
             {
@@ -50,8 +51,15 @@ namespace Presentacion
                         Activo = this.chkBackOfficeHabilitado.Checked,
                         TipoUsuario = "backoffice"
                     };
-                    ws.InsertarBackoffice(bovo);
-                    MessageBox.Show("Se creó BO");
+                    err=ws.InsertarBackoffice(bovo);
+                    if (err.ToString()=="Ok")
+                    {
+                        MessageBox.Show("Se creo el BackOffice");
+                    }
+                    else
+                    {
+                        MessageBox.Show(err.ToString());
+                    }
                     break;
 
                 case "M":
@@ -60,8 +68,15 @@ namespace Presentacion
                     break;
                 case "E":
                     boid = Int32.Parse(this.txtBackOfficeId.Text);
-                    ws.BorrarBackoffice(boid);
-                    MessageBox.Show("Se elimino BO");
+                    err=ws.BorrarBackoffice(boid);
+                    if (err.ToString() == "Ok")
+                    {
+                        MessageBox.Show("Se elimino el BackOffice");
+                    }
+                    else
+                    {
+                        MessageBox.Show(err.ToString());
+                    }
                     break;
             }
             
@@ -110,7 +125,7 @@ namespace Presentacion
 
         private void cmbRol_Validated(object sender, EventArgs e)
         {
-            //hay que validar contra el enumerado que vamos a utilizar
+            
         }
 
         private void txtUsuarioEmail_TextChanged(object sender, EventArgs e)
@@ -133,14 +148,7 @@ namespace Presentacion
 
             switch (lblParametro.Text)
             {
-                case "A":
-                    this.Text = "Nuevo BackOffice";
-                    this.txtBackOfficeId.Enabled = false;
-                    this.txtUsuarioEmail.Enabled = true;
-                    this.txtUsuarioContrasenia.Enabled = true;
-                    this.txtBackOfficeNombre.Enabled = true;
-                    this.cmbRol.Enabled = true;
-                    break;
+               
                 case "M":
                     this.Text = "Modificar BackOffice";
                     this.txtBackOfficeId.Enabled = true;

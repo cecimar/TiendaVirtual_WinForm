@@ -34,17 +34,39 @@ namespace Presentacion
                         Cotizacion = Decimal.Parse(txtMonedaCotizacion.Text)
                     };
                     err=ws.InsertarMoneda(monvo);
+                    if (err.ToString() == "Ok")
+                    {
+                        MessageBox.Show("Se creo la Moneda");
+                    }
+                    else
+                    {
+                        MessageBox.Show(err.ToString());
+                    }
                     break;
                 case "M":
                     monid = Int32.Parse(this.txtMonedaId.Text);
                     moncot = Decimal.Parse(this.txtMonedaCotizacion.Text);
                     err=ws.ModificarMonedaCotizacion(monid, moncot);
-                    
+                    if (err.ToString() == "Ok")
+                    {
+                        MessageBox.Show("Se modifico la cotizacion de la moneda");
+                    }
+                    else
+                    {
+                        MessageBox.Show(err.ToString());
+                    }
                     break;
                 case "E":
                     monid = Int32.Parse(this.txtMonedaId.Text);
                     err=ws.BorrarMoneda(monid);
-                    //MessageBox.Show("Se elimino la Moneda");
+                    if (err.ToString() == "Ok")
+                    {
+                        MessageBox.Show("Se elimino la Moneda");
+                    }
+                    else
+                    {
+                        MessageBox.Show(err.ToString());
+                    }
                     break;
             }
            
