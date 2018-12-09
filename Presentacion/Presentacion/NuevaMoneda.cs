@@ -71,11 +71,15 @@ namespace Presentacion
             }
            
             this.Close();
+            wfMonedas frm = new wfMonedas();
+            frm.Show();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+            wfMonedas frm = new wfMonedas();
+            frm.Show();
         }
 
 
@@ -169,6 +173,11 @@ namespace Presentacion
             {
                 errorProvider.Clear();
             }
+
+        }
+
+        private void NuevaMoneda_Load(object sender, EventArgs e)
+        {
 
         }
     }

@@ -34,6 +34,7 @@ namespace Presentacion
             frm.txtUsuarioContrasenia.Enabled = true;
             frm.txtBackOfficeNombre.Enabled = true;
             frm.cmbRol.Enabled = true;
+            this.Close();
             frm.Show();
         }
 
@@ -41,8 +42,41 @@ namespace Presentacion
         {
             WebServiceSoapClient ws = new WebServiceSoapClient();
             this.Text = "Listar BackOffice";
-            TipoError err = ws.ListarBackoffice(out BackOfficeVO[] lstbo);
+            TipoError err = ws.ListarBackoffice(out BackofficeVO[] lstbo);
             this.grdLista.DataSource = null;
             this.grdLista.DataSource = lstbo;
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            NuevoBackOffice frm = new NuevoBackOffice();
+            frm.Text = "Nuevo BackOffice";
+            frm.lblParametro.Text = "E";
+            frm.txtBackOfficeId.Enabled = false;
+            frm.txtUsuarioEmail.Enabled = false;
+            frm.txtUsuarioContrasenia.Enabled = false;
+            frm.txtBackOfficeNombre.Enabled = false;
+            frm.cmbRol.Enabled = false;
+            frm.txtBackOfficeId.Text = grdLista.CurrentRow.Cells[2].Value.ToString();
+            frm.txtUsuarioEmail.Text = grdLista.CurrentRow.Cells[3].Value.ToString();
+            frm.txtUsuarioContrasenia.Text = grdLista.CurrentRow.Cells[4].Value.ToString();
+            frm.txtBackOfficeNombre.Text = grdLista.CurrentRow.Cells[0].Value.ToString();
+            frm.cmbRol.Text = grdLista.CurrentRow.Cells[1].Value.ToString();
+            if (grdLista.CurrentRow.Cells[5].Value.ToString() == "True")
+            {
+                frm.chkBackOfficeHabilitado.Checked = true;
+            }
+            else
+            {
+                frm.chkBackOfficeHabilitado.Checked = false;
+            }
+            this.Close();
+            frm.Show();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
+}

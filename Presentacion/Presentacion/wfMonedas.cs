@@ -52,6 +52,7 @@ namespace Presentacion
             frm.txtMonedaAbreviatura.Text = grdLista.CurrentRow.Cells[1].Value.ToString();
             frm.txtMonedaDescripcion.Text = grdLista.CurrentRow.Cells[2].Value.ToString();
             frm.txtMonedaCotizacion.Text = grdLista.CurrentRow.Cells[3].Value.ToString();
+            this.Close();
             frm.Show();
         }
 
@@ -68,6 +69,7 @@ namespace Presentacion
             frm.txtMonedaAbreviatura.Text = grdLista.CurrentRow.Cells[1].Value.ToString();
             frm.txtMonedaDescripcion.Text = grdLista.CurrentRow.Cells[2].Value.ToString();
             frm.txtMonedaCotizacion.Text = grdLista.CurrentRow.Cells[3].Value.ToString();
+            this.Close();
             frm.Show();
         }
 

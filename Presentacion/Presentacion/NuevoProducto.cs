@@ -33,16 +33,7 @@ namespace Presentacion
             //Identifico el parametro que se paso
             switch (lblParametro.Text)
             {
-                case "A":
-                    this.Text = "Nuevo Producto";
-                    this.txtProductoId.Enabled = false;
-                    this.txtProductoNombre.Enabled = true;
-                    this.txtProductoDescripcion.Enabled = true;
-                    this.cmbCategoria.Enabled = true;
-                    this.txtProductoPrecio.Enabled = true;
-                    this.txtProductoStock.Enabled = true;
-                    this.btnSubirFoto.Enabled = true;
-                    break;
+                
                 case "M":
                     this.Text = "Modificar Producto";
                     this.txtProductoId.Enabled = true;
@@ -72,8 +63,9 @@ namespace Presentacion
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            int proid;
+            int proid, prostock;
             WebServiceSoapClient ws = new WebServiceSoapClient();
+            TipoError err;
            
             switch (lblParametro.Text)
             {
@@ -89,27 +81,80 @@ namespace Presentacion
                         FechaAlta = DateTime.Today,
                         Habilitado = this.chkProductoHabilitado.Checked
                     };
-
-                    ws.InsertarProducto(prvo);
-                    MessageBox.Show("Se creó el Producto");
+                    err=ws.InsertarProducto(prvo);
+                    if (err.ToString() == "Ok")
+                    {
+                        MessageBox.Show("Se creo el producto");
+                    }
+                    else
+                    {
+                        MessageBox.Show(err.ToString());
+                    }
                     break;
-                case "M":
-                    //ws.ModificarProducto();
-                    MessageBox.Show("Aun no implementado");
+                case "MP":
+                    proid = Int32.Parse(this.txtProductoId.Text);
+                    ProductoVO prvom = new ProductoVO()
+                    {
+                        IdProducto = proid,
+                        Nombre = this.txtProductoNombre.Text,
+                        Descripcion = this.txtProductoDescripcion.Text,
+                        IdCategoria = (int)this.cmbCategoria.SelectedValue,
+                        Precio = Decimal.Parse(this.txtProductoPrecio.Text),
+                        Stock = Int32.Parse(this.txtProductoStock.Text),
+                        Foto = this.lblNombreFoto.Text,
+                        FechaAlta = DateTime.Today,
+                        Habilitado = this.chkProductoHabilitado.Checked
+                    };
+                    err = ws.ModificarProducto(prvom);
+                    if (err.ToString() == "Ok")
+                    {
+                        MessageBox.Show("Se modifico el producto");
+                    }
+                    else
+                    {
+                        MessageBox.Show(err.ToString());
+                    }
+                    break;
+
+                case "MS":
+                    proid = Int32.Parse(this.txtProductoId.Text);
+                    prostock = Int32.Parse(this.txtProductoStock.Text);
+
+                    err = ws.ModificarStockProducto(proid,prostock);
+                    if (err.ToString() == "Ok")
+                    {
+                        MessageBox.Show("Se modifico el stock del producto");
+                    }
+                    else
+                    {
+                        MessageBox.Show(err.ToString());
+                    }
                     break;
                 case "E":
                     proid = Int32.Parse(this.txtProductoId.Text);
-                    ws.BorrarProducto(proid);
-                    MessageBox.Show("Se elimino el Producto");
+                    err=ws.BorrarProducto(proid);
+                    if (err.ToString() == "Ok")
+                    {
+                        MessageBox.Show("Se elimino el producto");
+                    }
+                    else
+                    {
+                        MessageBox.Show(err.ToString());
+                    }
                     break;
             }
             this.Close();
+            wfProductos frm = new wfProductos();
+            frm.Show();
+
         }
     
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+            wfProductos frm = new wfProductos();
+            frm.Show();
         }
 
         private void txtProductoPrecio_TextChanged(object sender, EventArgs e)

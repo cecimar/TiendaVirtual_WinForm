@@ -86,13 +86,16 @@ namespace Presentacion
                     this.Text = "";
                     break;
             }
-            
             this.Close();
+            wfCategorias frm = new wfCategorias();
+            frm.Show();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+            wfCategorias frm = new wfCategorias();
+            frm.Show();
         }
 
         private void txtCategoriaNombre_Validated(object sender, EventArgs e)

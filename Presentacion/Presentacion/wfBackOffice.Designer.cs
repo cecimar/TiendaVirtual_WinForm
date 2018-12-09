@@ -28,25 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnModificarDescripcion = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnModificarNombre = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.grdLista = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.grdLista)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnModificarDescripcion
-            // 
-            this.btnModificarDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModificarDescripcion.Location = new System.Drawing.Point(410, 394);
-            this.btnModificarDescripcion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnModificarDescripcion.Name = "btnModificarDescripcion";
-            this.btnModificarDescripcion.Size = new System.Drawing.Size(206, 53);
-            this.btnModificarDescripcion.TabIndex = 27;
-            this.btnModificarDescripcion.Text = "Modificar Descripcion";
-            this.btnModificarDescripcion.UseVisualStyleBackColor = true;
             // 
             // btnCerrar
             // 
@@ -58,28 +45,19 @@
             this.btnCerrar.TabIndex = 26;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminar.Location = new System.Drawing.Point(622, 394);
+            this.btnEliminar.Location = new System.Drawing.Point(230, 394);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(173, 53);
             this.btnEliminar.TabIndex = 25;
             this.btnEliminar.Text = "Eliminar BackOffice";
             this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnModificarNombre
-            // 
-            this.btnModificarNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModificarNombre.Location = new System.Drawing.Point(216, 394);
-            this.btnModificarNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnModificarNombre.Name = "btnModificarNombre";
-            this.btnModificarNombre.Size = new System.Drawing.Size(189, 53);
-            this.btnModificarNombre.TabIndex = 24;
-            this.btnModificarNombre.Text = "Modificar Nombre";
-            this.btnModificarNombre.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnNuevo
             // 
@@ -113,10 +91,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1010, 494);
-            this.Controls.Add(this.btnModificarDescripcion);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnModificarNombre);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.grdLista);
             this.Font = new System.Drawing.Font("Arial", 10.2F);
@@ -131,11 +107,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnModificarDescripcion;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnModificarNombre;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.DataGridView grdLista;
     }

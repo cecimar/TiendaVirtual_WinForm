@@ -331,9 +331,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtProductoDescripcion;
-        private System.Windows.Forms.TextBox txtProductoNombre;
         private System.Windows.Forms.Label lblProductoDescripcion;
         private System.Windows.Forms.Label lblProductoNombre;
         private System.Windows.Forms.Button btnCancelar;
@@ -341,19 +338,21 @@
         private System.Windows.Forms.Label lblProductoFoto;
         private System.Windows.Forms.Label lblProductoPrecio;
         private System.Windows.Forms.Label lblProductoStock;
-        private System.Windows.Forms.TextBox txtProductoPrecio;
-        private System.Windows.Forms.TextBox txtProductoStock;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button btnSubirFoto;
-        private System.Windows.Forms.PictureBox PicBoxProductoFoto;
-        private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.ErrorProvider errorProvider;
         public System.Windows.Forms.Label lblParametro;
-        private System.Windows.Forms.CheckBox chkProductoHabilitado;
         private System.Windows.Forms.Label lblProductoHabilitada;
-        private System.Windows.Forms.TextBox txtProductoId;
         private System.Windows.Forms.Label lblProductoId;
         private System.Windows.Forms.Label lblNombreFoto;
+        public System.Windows.Forms.TextBox txtProductoDescripcion;
+        public System.Windows.Forms.TextBox txtProductoNombre;
+        public System.Windows.Forms.TextBox txtProductoPrecio;
+        public System.Windows.Forms.TextBox txtProductoStock;
+        public System.Windows.Forms.Button btnSubirFoto;
+        public System.Windows.Forms.PictureBox PicBoxProductoFoto;
+        public System.Windows.Forms.ComboBox cmbCategoria;
+        public System.Windows.Forms.CheckBox chkProductoHabilitado;
+        public System.Windows.Forms.TextBox txtProductoId;
     }
 }

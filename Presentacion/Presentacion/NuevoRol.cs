@@ -20,27 +20,7 @@ namespace Presentacion
 
         private void NuevoRol_Load(object sender, EventArgs e)
         {
-            switch (lblParametro.Text)
-            {
-                case "A":
-                    this.Text = "Nuevo Rol";
-                    this.txtRolId.Enabled = false;
-                    this.txtRolNombre.Enabled = true;
-                    break;
-                case "M":
-                    this.Text = "Modificar Rol";
-                    this.txtRolId.Enabled = true;
-                    this.txtRolNombre.Enabled = true;
-                    break;
-                case "E":
-                    this.Text = "Eliminar Rol";
-                    this.txtRolId.Enabled = true;
-                    this.txtRolNombre.Enabled = false;
-                    break;
-                default:
-                    this.Text = "";
-                    break;
-            }
+         
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
@@ -48,6 +28,7 @@ namespace Presentacion
             int rolid = 0;
             string rolnom = "";
             WebServiceSoapClient ws = new WebServiceSoapClient();
+            TipoError err;
             switch (lblParametro.Text)
             {
                 case "A":
@@ -55,19 +36,40 @@ namespace Presentacion
                     {
                         Nombre=this.txtRolNombre.Text
                     };
-                    ws.InsertarRol(rolvo);
-                    MessageBox.Show("Se creó el rol");
+                    err=ws.InsertarRol(rolvo);
+                    if (err.ToString() == "Ok")
+                    {
+                        MessageBox.Show("Se creó el rol");
+                    }
+                    else
+                    {
+                        MessageBox.Show(err.ToString());
+                    }
                     break;
                 case "M":
                     rolid = Int32.Parse(this.txtRolId.Text);
                     rolnom = this.txtRolNombre.Text;
-                    ws.ModificarRol(rolid, rolnom);
-                    MessageBox.Show("Se modifico el rol");
+                    err=ws.ModificarRol(rolid, rolnom);
+                    if (err.ToString() == "Ok")
+                    {
+                        MessageBox.Show("Se modifico el rol");
+                    }
+                    else
+                    {
+                        MessageBox.Show(err.ToString());
+                    }
                     break;
                 case "E":
                     rolid = Int32.Parse(this.txtRolId.Text);
-                    ws.BorrarRol(rolid);
-                    MessageBox.Show("Se elimino el rol");
+                    err=ws.BorrarRol(rolid);
+                    if (err.ToString() == "Ok")
+                    {
+                        MessageBox.Show("Se elimino el rol");
+                    }
+                    else
+                    {
+                        MessageBox.Show(err.ToString());
+                    }
                     break;
                 default:
                     this.Text = "";
@@ -75,6 +77,8 @@ namespace Presentacion
             }
 
             this.Close();
+            wfRol frm = new wfRol();
+            frm.Show();
         }
 
         private void NuevoRol_Validating(object sender, CancelEventArgs e)
@@ -93,6 +97,8 @@ namespace Presentacion
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+            wfRol frm = new wfRol();
+            frm.Show();
         }
     }
 }

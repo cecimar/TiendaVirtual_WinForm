@@ -91,7 +91,7 @@
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(144, 44);
             this.btnGrabar.TabIndex = 30;
-            this.btnGrabar.Text = "Grabar";
+            this.btnGrabar.Text = "Aceptar";
             this.btnGrabar.UseVisualStyleBackColor = true;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
@@ -148,14 +148,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtRolId;
         private System.Windows.Forms.Label lblRolId;
         public System.Windows.Forms.Label lblParametro;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGrabar;
-        private System.Windows.Forms.TextBox txtRolNombre;
         private System.Windows.Forms.Label lblRolNombre;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        public System.Windows.Forms.TextBox txtRolId;
+        public System.Windows.Forms.TextBox txtRolNombre;
     }
 }

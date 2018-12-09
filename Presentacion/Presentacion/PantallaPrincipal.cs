@@ -39,16 +39,6 @@ namespace Presentacion
         }
 
 
-        private void productoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            productoToolStripMenuItem.Checked = !productoToolStripMenuItem.Checked;
-        }
-
-        private void backOfficeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            backOfficeToolStripMenuItem.Checked=!backOfficeToolStripMenuItem.Checked;
-        }
-
         private void nuevaCategoríaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NuevaCategoria frm = new NuevaCategoria();

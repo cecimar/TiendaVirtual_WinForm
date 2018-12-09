@@ -242,7 +242,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo BackOffice";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.NuevoBackOffice_Load);
+            //this.Load += new System.EventHandler(this.NuevoBackOffice_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

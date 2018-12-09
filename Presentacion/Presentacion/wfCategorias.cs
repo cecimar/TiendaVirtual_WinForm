@@ -37,6 +37,7 @@ namespace Presentacion
             frm.txtCategoriaNombre.Enabled = true;
             frm.txtCategoriaDescripcion.Enabled = true;
             frm.chkCategoriaHabilitada.Enabled = true;
+            this.Close();
             frm.Show();
         }
 
@@ -60,6 +61,7 @@ namespace Presentacion
             {
                 frm.chkCategoriaHabilitada.Checked = false;
             }
+            this.Close();
             frm.Show();
         }
 
@@ -88,6 +90,7 @@ namespace Presentacion
             {
                 frm.chkCategoriaHabilitada.Checked = false;
             }
+            this.Close();
             frm.Show();
         }
 
@@ -111,6 +114,7 @@ namespace Presentacion
             {
                 frm.chkCategoriaHabilitada.Checked = false;
             }
+            this.Close();
             frm.Show();
         }
 

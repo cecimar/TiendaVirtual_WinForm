@@ -33,7 +33,7 @@
             this.btnModificarNombre = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.grdLista = new System.Windows.Forms.DataGridView();
-            this.btnModificarDescripcion = new System.Windows.Forms.Button();
+            this.btnModificarStock = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdLista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,16 +94,16 @@
             this.grdLista.Size = new System.Drawing.Size(831, 281);
             this.grdLista.TabIndex = 16;
             // 
-            // btnModificarDescripcion
+            // btnModificarStock
             // 
-            this.btnModificarDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModificarDescripcion.Location = new System.Drawing.Point(360, 345);
-            this.btnModificarDescripcion.Name = "btnModificarDescripcion";
-            this.btnModificarDescripcion.Size = new System.Drawing.Size(183, 45);
-            this.btnModificarDescripcion.TabIndex = 21;
-            this.btnModificarDescripcion.Text = "Modificar Descripcion";
-            this.btnModificarDescripcion.UseVisualStyleBackColor = true;
-            this.btnModificarDescripcion.Click += new System.EventHandler(this.btnModificarDescripcion_Click);
+            this.btnModificarStock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnModificarStock.Location = new System.Drawing.Point(360, 345);
+            this.btnModificarStock.Name = "btnModificarStock";
+            this.btnModificarStock.Size = new System.Drawing.Size(183, 45);
+            this.btnModificarStock.TabIndex = 21;
+            this.btnModificarStock.Text = "Modificar Descripcion";
+            this.btnModificarStock.UseVisualStyleBackColor = true;
+            this.btnModificarStock.Click += new System.EventHandler(this.btnModificarDescripcion_Click);
             // 
             // wfCategorias
             // 
@@ -111,7 +111,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(895, 425);
-            this.Controls.Add(this.btnModificarDescripcion);
+            this.Controls.Add(this.btnModificarStock);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificarNombre);
@@ -137,6 +137,6 @@
         private System.Windows.Forms.Button btnModificarNombre;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.DataGridView grdLista;
-        private System.Windows.Forms.Button btnModificarDescripcion;
+        private System.Windows.Forms.Button btnModificarStock;
     }
 }

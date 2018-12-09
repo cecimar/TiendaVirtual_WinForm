@@ -178,6 +178,12 @@
     <EmbeddedResource Include="wfMonedas.resx">
       <DependentUpon>wfMonedas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="wfProductos.resx">
+      <DependentUpon>wfProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="wfRol.resx">
+      <DependentUpon>wfRol.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Connected Services\WebServiceTV\Presentacion.WebServiceTV.BackofficeVO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
