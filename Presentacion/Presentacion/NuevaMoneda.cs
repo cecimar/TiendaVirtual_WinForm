@@ -18,47 +18,37 @@ namespace Presentacion
             InitializeComponent();
         }
 
-        private void lblCategoriaNombre_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnGrabar_Click(object sender, EventArgs e)
         {
             int monid = 0;
             decimal moncot = 0;
             WebServiceSoapClient ws = new WebServiceSoapClient();
+            TipoError err;
             switch (lblParametro.Text)
             {
                 case "A":
-                    MessageBox.Show("Se creó la Moneda");
                     MonedaVO monvo = new MonedaVO()
                     {
                         Abreviatura = this.txtMonedaAbreviatura.Text,
                         Descripcion = this.txtMonedaDescripcion.Text,
                         Cotizacion = Decimal.Parse(txtMonedaCotizacion.Text)
                     };
-                    ws.InsertarMoneda(monvo);
+                    err=ws.InsertarMoneda(monvo);
                     break;
                 case "M":
                     monid = Int32.Parse(this.txtMonedaId.Text);
                     moncot = Decimal.Parse(this.txtMonedaCotizacion.Text);
-                    ws.ModificarMonedaCotizacion(monid, moncot);
-                    MessageBox.Show("Se modifico la Moneda");
+                    err=ws.ModificarMonedaCotizacion(monid, moncot);
+                    
                     break;
                 case "E":
                     monid = Int32.Parse(this.txtMonedaId.Text);
-                    ws.BorrarMoneda(monid);
-                    MessageBox.Show("Se elimino la Moneda");
+                    err=ws.BorrarMoneda(monid);
+                    //MessageBox.Show("Se elimino la Moneda");
                     break;
             }
            
             this.Close();
-        }
-
-        private void txtCategoriaDescripcion_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -66,15 +56,6 @@ namespace Presentacion
             this.Close();
         }
 
-        private void lblCategoriaDescripcion_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCategoriaNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void txtMonedaCotizacion_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -87,11 +68,6 @@ namespace Presentacion
             {
                errorProvider.Clear();
             }
-        }
-
-        private void txtMonedaCotizacion_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void txtMonedaCotizacion_Validated(object sender, EventArgs e)
@@ -133,38 +109,7 @@ namespace Presentacion
             }
         }
 
-        private void NuevaMoneda_Load(object sender, EventArgs e)
-        {
-            switch (lblParametro.Text)
-            {
-                case "A":
-                    this.Text = "Nueva Moneda";
-                    this.txtMonedaId.Enabled = false;
-                    this.txtMonedaAbreviatura.Enabled = true;
-                    this.txtMonedaDescripcion.Enabled = true;
-                    this.txtMonedaCotizacion.Enabled = true;
-                    break;
-                case "M":
-                    this.Text = "Modificar Moneda";
-                    this.txtMonedaId.Enabled = true;
-                    this.txtMonedaAbreviatura.Enabled = false;
-                    this.txtMonedaDescripcion.Enabled = false;
-                    this.txtMonedaCotizacion.Enabled = true;
-                    break;
-                case "E":
-                    this.Text = "Eliminar Moneda";
-                    this.txtMonedaId.Enabled = true;
-                    this.txtMonedaAbreviatura.Enabled = false;
-                    this.txtMonedaDescripcion.Enabled = false;
-                    this.txtMonedaCotizacion.Enabled = false;
-                    break;
-                default:
-                    this.Text = "";
-                    break;
-            }
-        }
-
-        private void txtMonedaId_Validating(object sender, CancelEventArgs e)
+        public void txtMonedaId_Validating(object sender, CancelEventArgs e)
         {
             if (Int32.Parse(txtMonedaId.Text) == 0)
             {
@@ -177,12 +122,7 @@ namespace Presentacion
             }
         }
 
-        private void txtMonedaId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMonedaId_KeyPress(object sender, KeyPressEventArgs e)
+        public void txtMonedaId_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Permito ingresar solo un entero
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))

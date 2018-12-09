@@ -93,7 +93,7 @@
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(128, 37);
             this.btnGrabar.TabIndex = 5;
-            this.btnGrabar.Text = "Grabar";
+            this.btnGrabar.Text = "Aceptar";
             this.btnGrabar.UseVisualStyleBackColor = true;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
@@ -192,7 +192,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nueva Categoría";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.NuevaCategoria_Load);
+            this.Load += new System.EventHandler(this.NuevaCategoria_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -203,16 +203,16 @@
 
         private System.Windows.Forms.Label lblCategoriaNombre;
         private System.Windows.Forms.Label lblCategoriaDescripcion;
-        private System.Windows.Forms.TextBox txtCategoriaNombre;
-        private System.Windows.Forms.TextBox txtCategoriaDescripcion;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ErrorProvider errorProvider;
         public System.Windows.Forms.Label lblParametro;
         private System.Windows.Forms.Label lblCategoriaHabilitada;
-        private System.Windows.Forms.CheckBox chkCategoriaHabilitada;
-        private System.Windows.Forms.TextBox txtCategoriaId;
         private System.Windows.Forms.Label lblCategoriaId;
+        public System.Windows.Forms.TextBox txtCategoriaNombre;
+        public System.Windows.Forms.TextBox txtCategoriaDescripcion;
+        public System.Windows.Forms.CheckBox chkCategoriaHabilitada;
+        public System.Windows.Forms.TextBox txtCategoriaId;
     }
 }
 

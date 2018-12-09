@@ -106,6 +106,36 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="wfBackOffice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wfBackOffice.Designer.cs">
+      <DependentUpon>wfBackOffice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="wfCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wfCategorias.Designer.cs">
+      <DependentUpon>wfCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="wfMonedas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wfMonedas.Designer.cs">
+      <DependentUpon>wfMonedas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="wfProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wfProductos.Designer.cs">
+      <DependentUpon>wfProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="wfRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wfRol.Designer.cs">
+      <DependentUpon>wfRol.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ListarObjeto.resx">
       <DependentUpon>ListarObjeto.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +169,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="wfBackOffice.resx">
+      <DependentUpon>wfBackOffice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="wfCategorias.resx">
+      <DependentUpon>wfCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="wfMonedas.resx">
+      <DependentUpon>wfMonedas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Connected Services\WebServiceTV\Presentacion.WebServiceTV.BackofficeVO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -149,6 +188,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\WebServiceTV\Presentacion.WebServiceTV.DarCategoriaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebServiceTV\Presentacion.WebServiceTV.EstadoCategoriaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\WebServiceTV\Presentacion.WebServiceTV.InsertarBackofficeResponse.datasource">
@@ -187,6 +229,9 @@
     <None Include="Connected Services\WebServiceTV\Presentacion.WebServiceTV.ModificarDescripcionCategoriaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\WebServiceTV\Presentacion.WebServiceTV.ModificarNombreCategoriaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\WebServiceTV\Presentacion.WebServiceTV.ModificarProductoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -202,7 +247,10 @@
     <None Include="Connected Services\WebServiceTV\Presentacion.WebServiceTV.RolVO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\WebServiceTV\Presentacion.WebServiceTV.UsuarioLoginResponse.datasource">
+    <None Include="Connected Services\WebServiceTV\Presentacion.WebServiceTV.TipoError.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebServiceTV\Presentacion.WebServiceTV.UsuarioLoginWINResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\WebServiceTV\WebService.wsdl" />

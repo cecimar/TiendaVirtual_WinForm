@@ -66,7 +66,7 @@
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(128, 37);
             this.btnGrabar.TabIndex = 10;
-            this.btnGrabar.Text = "Grabar";
+            this.btnGrabar.Text = "Aceptar";
             this.btnGrabar.UseVisualStyleBackColor = true;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
@@ -99,7 +99,6 @@
             this.lblCategoriaDescripcion.Size = new System.Drawing.Size(108, 19);
             this.lblCategoriaDescripcion.TabIndex = 7;
             this.lblCategoriaDescripcion.Text = "Descripción:";
-            this.lblCategoriaDescripcion.Click += new System.EventHandler(this.lblCategoriaDescripcion_Click);
             // 
             // lblCategoriaNombre
             // 
@@ -110,7 +109,6 @@
             this.lblCategoriaNombre.Size = new System.Drawing.Size(191, 19);
             this.lblCategoriaNombre.TabIndex = 6;
             this.lblCategoriaNombre.Text = "Abreviatura Moneda(*):";
-            this.lblCategoriaNombre.Click += new System.EventHandler(this.lblCategoriaNombre_Click);
             // 
             // txtMonedaCotizacion
             // 
@@ -119,7 +117,6 @@
             this.txtMonedaCotizacion.Name = "txtMonedaCotizacion";
             this.txtMonedaCotizacion.Size = new System.Drawing.Size(330, 27);
             this.txtMonedaCotizacion.TabIndex = 4;
-            this.txtMonedaCotizacion.TextChanged += new System.EventHandler(this.txtMonedaCotizacion_TextChanged);
             this.txtMonedaCotizacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonedaCotizacion_KeyPress);
             this.txtMonedaCotizacion.Validating += new System.ComponentModel.CancelEventHandler(this.txtMonedaCotizacion_Validating);
             this.txtMonedaCotizacion.Validated += new System.EventHandler(this.txtMonedaCotizacion_Validated);
@@ -156,7 +153,6 @@
             this.txtMonedaId.Name = "txtMonedaId";
             this.txtMonedaId.Size = new System.Drawing.Size(330, 27);
             this.txtMonedaId.TabIndex = 1;
-            this.txtMonedaId.TextChanged += new System.EventHandler(this.txtMonedaId_TextChanged);
             this.txtMonedaId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonedaId_KeyPress);
             this.txtMonedaId.Validating += new System.ComponentModel.CancelEventHandler(this.txtMonedaId_Validating);
             // 
@@ -195,7 +191,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nueva Moneda";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.NuevaMoneda_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -206,15 +201,15 @@
 
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGrabar;
-        private System.Windows.Forms.TextBox txtMonedaDescripcion;
-        private System.Windows.Forms.TextBox txtMonedaAbreviatura;
         private System.Windows.Forms.Label lblCategoriaDescripcion;
         private System.Windows.Forms.Label lblCategoriaNombre;
-        private System.Windows.Forms.TextBox txtMonedaCotizacion;
         private System.Windows.Forms.Label lblMonedaCotizacion;
         private System.Windows.Forms.ErrorProvider errorProvider;
         public System.Windows.Forms.Label lblParametro;
-        private System.Windows.Forms.TextBox txtMonedaId;
         private System.Windows.Forms.Label lblMonedaId;
+        public System.Windows.Forms.TextBox txtMonedaDescripcion;
+        public System.Windows.Forms.TextBox txtMonedaAbreviatura;
+        public System.Windows.Forms.TextBox txtMonedaCotizacion;
+        public System.Windows.Forms.TextBox txtMonedaId;
     }
 }

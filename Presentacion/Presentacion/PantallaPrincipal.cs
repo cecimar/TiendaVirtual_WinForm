@@ -38,15 +38,6 @@ namespace Presentacion
 
         }
 
-        private void monedasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            monedasToolStripMenuItem.Checked = !monedasToolStripMenuItem.Checked;
-        }
-
-        private void categoríasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            categoríasToolStripMenuItem.Checked = !categoríasToolStripMenuItem.Checked;
-        }
 
         private void productoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -197,6 +188,36 @@ namespace Presentacion
         {
             ListarObjeto frm = new ListarObjeto();
             frm.lblParametroListar.Text = "Moneda";
+            frm.Show();
+        }
+
+        private void monedasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            wfMonedas frm = new wfMonedas();
+            frm.Show();
+        }
+
+        private void categoríasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            wfCategorias frm = new wfCategorias();
+            frm.Show();
+        }
+
+        private void rolToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            wfRol frm = new wfRol();
+            frm.Show();
+        }
+
+        private void backOfficeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            wfBackOffice frm = new wfBackOffice();
+            frm.Show();
+        }
+
+        private void productoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            wfProductos frm = new wfProductos();
             frm.Show();
         }
     }

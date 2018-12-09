@@ -22,6 +22,8 @@ namespace Presentacion
         {
             int catid = 0;
             string catdescr = "";
+            string catnom = "";
+            TipoError err;
             WebServiceSoapClient ws = new WebServiceSoapClient();
             switch (lblParametro.Text)
             {
@@ -32,19 +34,53 @@ namespace Presentacion
                         Descripcion = this.txtCategoriaDescripcion.Text,
                         Habilitado = this.chkCategoriaHabilitada.Checked
                     };
-                    ws.InsertarCategoria(catvo);
-                    MessageBox.Show("Se creó la Categoría");
+                    err=ws.InsertarCategoria(catvo);
+                    if (err.ToString() == "Ok")
+                    {
+                        MessageBox.Show("Se creó la Categoría");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo crear la Categoría");
+                    }
                     break;
-                case "M":
+                case "MC":
+                    catid = Int32.Parse(this.txtCategoriaId.Text);
+                    catnom = this.txtCategoriaNombre.Text;
+                    err=ws.ModificarNombreCategoria(catid,catnom);
+                    if (err.ToString() == "Ok")
+                    {
+                        MessageBox.Show("Se modifico el nombre de la Categoría");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo modificar el nombre de la Categoría");
+                    }
+                    break;
+                case "MD":
                     catid = Int32.Parse(this.txtCategoriaId.Text);
                     catdescr = this.txtCategoriaDescripcion.Text;
-                    ws.ModificarDescripcionCategoria(catid, catdescr);
-                    MessageBox.Show("Se modifico la Categoría");
+                    err=ws.ModificarDescripcionCategoria(catid, catdescr);
+                    if (err.ToString() == "Ok")
+                    {
+                        MessageBox.Show("Se modifico la descripcion de la Categoría");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo modificar la descripcion de la Categoría");
+                    }
                     break;
                 case "E":
                     catid = Int32.Parse(this.txtCategoriaId.Text);
-                    ws.BorrarCategoria(catid);
-                    MessageBox.Show("Se elimino la Categoría");
+                    err=ws.BorrarCategoria(catid);
+                    if (err.ToString() == "Ok")
+                    {
+                        MessageBox.Show("Se elimino la Categoría");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo modificar la Categoría");
+                    }
                     break;
                 default:
                     this.Text = "";
@@ -84,33 +120,7 @@ namespace Presentacion
 
         private void NuevaCategoria_Load(object sender, EventArgs e)
         {
-            switch (lblParametro.Text)
-            {
-                case "A":
-                    this.Text = "Nueva Categoria";
-                    this.txtCategoriaId.Enabled = false;
-                    this.txtCategoriaNombre.Enabled = true;
-                    this.txtCategoriaDescripcion.Enabled = true;
-                    this.chkCategoriaHabilitada.Enabled = true;
-                    break;
-                case "M":
-                    this.Text = "Modificar Categoria";
-                    this.txtCategoriaId.Enabled = true;
-                    this.txtCategoriaNombre.Enabled = false;
-                    this.txtCategoriaDescripcion.Enabled = true;
-                    this.chkCategoriaHabilitada.Enabled = false;
-                    break;
-                case "E":
-                    this.Text = "Eliminar Categoria";
-                    this.txtCategoriaId.Enabled = true;
-                    this.txtCategoriaNombre.Enabled = false;
-                    this.txtCategoriaDescripcion.Enabled = false;
-                    this.chkCategoriaHabilitada.Enabled = false;
-                    break;
-                default:
-                    this.Text = "";
-                    break;
-            }
+           
         }
 
         private void chkCategoriaHabilitada_CheckedChanged(object sender, EventArgs e)
@@ -151,15 +161,22 @@ namespace Presentacion
 
         private void txtCategoriaId_Validated(object sender, EventArgs e)
         {
+            //esto ya no se usa
             if (Int32.Parse(txtCategoriaId.Text) != 0)
             {
                 WebServiceSoapClient ws = new WebServiceSoapClient();
                 int catid = Int32.Parse(this.txtCategoriaId.Text);
-                CategoriaVO catvo = ws.DarCategoria(catid);
+                CategoriaVO catvo = new CategoriaVO();
+                TipoError err = ws.DarCategoria(catid,out catvo);
                 txtCategoriaDescripcion.Text = catvo.Descripcion;
                 txtCategoriaNombre.Text = catvo.Nombre;
                 chkCategoriaHabilitada.Checked = catvo.Habilitado;
             }
+        }
+
+        private void NuevaCategoria_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -13,6 +13,74 @@ namespace Presentacion.WebServiceTV {
     using System;
     
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TipoError", Namespace="http://TiendaVirtual.com/")]
+    public enum TipoError : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Ok = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BackofficeNoExiste = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CarritoNoExiste = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CategoriaConProductosAsociados = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CategoriaNoExiste = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CategoriaNoHabilitada = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CategoriaYaExiste = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ClienteNoExiste = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LoginIncorrecto = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MonedaNoExiste = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MonedaYaExiste = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PersonaYaExiste = 11,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProductoNoExiste = 12,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProductoYaExiste = 13,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RolNoExiste = 14,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RolYaExiste = 15,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        StockNegativo = 16,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UsuarioNoExiste = 17,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UsuarioNoHabilitado = 18,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UsuarioYaExiste = 19,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ErrorDesconocido = 20,
+    }
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CategoriaVO", Namespace="http://TiendaVirtual.com/")]
@@ -685,11 +753,17 @@ namespace Presentacion.WebServiceTV {
     public interface WebServiceSoap {
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento mail del espacio de nombres http://TiendaVirtual.com/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/UsuarioLogin", ReplyAction="*")]
-        Presentacion.WebServiceTV.UsuarioLoginResponse UsuarioLogin(Presentacion.WebServiceTV.UsuarioLoginRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/UsuarioLoginWIN", ReplyAction="*")]
+        Presentacion.WebServiceTV.UsuarioLoginWINResponse UsuarioLoginWIN(Presentacion.WebServiceTV.UsuarioLoginWINRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/UsuarioLogin", ReplyAction="*")]
-        System.Threading.Tasks.Task<Presentacion.WebServiceTV.UsuarioLoginResponse> UsuarioLoginAsync(Presentacion.WebServiceTV.UsuarioLoginRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/UsuarioLoginWIN", ReplyAction="*")]
+        System.Threading.Tasks.Task<Presentacion.WebServiceTV.UsuarioLoginWINResponse> UsuarioLoginWINAsync(Presentacion.WebServiceTV.UsuarioLoginWINRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/ActivaUsuario", ReplyAction="*")]
+        Presentacion.WebServiceTV.TipoError ActivaUsuario(int usrid, bool activo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/ActivaUsuario", ReplyAction="*")]
+        System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> ActivaUsuarioAsync(int usrid, bool activo);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento catvo del espacio de nombres http://TiendaVirtual.com/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/InsertarCategoria", ReplyAction="*")]
@@ -699,10 +773,10 @@ namespace Presentacion.WebServiceTV {
         System.Threading.Tasks.Task<Presentacion.WebServiceTV.InsertarCategoriaResponse> InsertarCategoriaAsync(Presentacion.WebServiceTV.InsertarCategoriaRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/BorrarCategoria", ReplyAction="*")]
-        void BorrarCategoria(int catid);
+        Presentacion.WebServiceTV.TipoError BorrarCategoria(int catid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/BorrarCategoria", ReplyAction="*")]
-        System.Threading.Tasks.Task BorrarCategoriaAsync(int catid);
+        System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> BorrarCategoriaAsync(int catid);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento desc del espacio de nombres http://TiendaVirtual.com/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/ModificarDescripcionCategoria", ReplyAction="*")]
@@ -711,19 +785,37 @@ namespace Presentacion.WebServiceTV {
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/ModificarDescripcionCategoria", ReplyAction="*")]
         System.Threading.Tasks.Task<Presentacion.WebServiceTV.ModificarDescripcionCategoriaResponse> ModificarDescripcionCategoriaAsync(Presentacion.WebServiceTV.ModificarDescripcionCategoriaRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ListarCategoriasResult del espacio de nombres http://TiendaVirtual.com/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/ListarCategorias", ReplyAction="*")]
         Presentacion.WebServiceTV.ListarCategoriasResponse ListarCategorias(Presentacion.WebServiceTV.ListarCategoriasRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/ListarCategorias", ReplyAction="*")]
         System.Threading.Tasks.Task<Presentacion.WebServiceTV.ListarCategoriasResponse> ListarCategoriasAsync(Presentacion.WebServiceTV.ListarCategoriasRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento DarCategoriaResult del espacio de nombres http://TiendaVirtual.com/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/DarCategoria", ReplyAction="*")]
         Presentacion.WebServiceTV.DarCategoriaResponse DarCategoria(Presentacion.WebServiceTV.DarCategoriaRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/DarCategoria", ReplyAction="*")]
         System.Threading.Tasks.Task<Presentacion.WebServiceTV.DarCategoriaResponse> DarCategoriaAsync(Presentacion.WebServiceTV.DarCategoriaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/EstadoCategoria", ReplyAction="*")]
+        Presentacion.WebServiceTV.EstadoCategoriaResponse EstadoCategoria(Presentacion.WebServiceTV.EstadoCategoriaRequest request);
+        
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/EstadoCategoria", ReplyAction="*")]
+        System.Threading.Tasks.Task<Presentacion.WebServiceTV.EstadoCategoriaResponse> EstadoCategoriaAsync(Presentacion.WebServiceTV.EstadoCategoriaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/ActivarCategoria", ReplyAction="*")]
+        Presentacion.WebServiceTV.TipoError ActivarCategoria(int catid, bool activa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/ActivarCategoria", ReplyAction="*")]
+        System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> ActivarCategoriaAsync(int catid, bool activa);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento nom del espacio de nombres http://TiendaVirtual.com/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/ModificarNombreCategoria", ReplyAction="*")]
+        Presentacion.WebServiceTV.ModificarNombreCategoriaResponse ModificarNombreCategoria(Presentacion.WebServiceTV.ModificarNombreCategoriaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/ModificarNombreCategoria", ReplyAction="*")]
+        System.Threading.Tasks.Task<Presentacion.WebServiceTV.ModificarNombreCategoriaResponse> ModificarNombreCategoriaAsync(Presentacion.WebServiceTV.ModificarNombreCategoriaRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento bacvo del espacio de nombres http://TiendaVirtual.com/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/InsertarBackoffice", ReplyAction="*")]
@@ -733,18 +825,17 @@ namespace Presentacion.WebServiceTV {
         System.Threading.Tasks.Task<Presentacion.WebServiceTV.InsertarBackofficeResponse> InsertarBackofficeAsync(Presentacion.WebServiceTV.InsertarBackofficeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/BorrarBackoffice", ReplyAction="*")]
-        void BorrarBackoffice(int bacid);
+        Presentacion.WebServiceTV.TipoError BorrarBackoffice(int bacid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/BorrarBackoffice", ReplyAction="*")]
-        System.Threading.Tasks.Task BorrarBackofficeAsync(int bacid);
+        System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> BorrarBackofficeAsync(int bacid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/CambiarRolBackoffice", ReplyAction="*")]
-        void CambiarRolBackoffice(int bacid, int rolid);
+        Presentacion.WebServiceTV.TipoError CambiarRolBackoffice(int bacid, int rolid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/CambiarRolBackoffice", ReplyAction="*")]
-        System.Threading.Tasks.Task CambiarRolBackofficeAsync(int bacid, int rolid);
+        System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> CambiarRolBackofficeAsync(int bacid, int rolid);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ListarBackofficeResult del espacio de nombres http://TiendaVirtual.com/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/ListarBackoffice", ReplyAction="*")]
         Presentacion.WebServiceTV.ListarBackofficeResponse ListarBackoffice(Presentacion.WebServiceTV.ListarBackofficeRequest request);
         
@@ -759,18 +850,17 @@ namespace Presentacion.WebServiceTV {
         System.Threading.Tasks.Task<Presentacion.WebServiceTV.InsertarMonedaResponse> InsertarMonedaAsync(Presentacion.WebServiceTV.InsertarMonedaRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/BorrarMoneda", ReplyAction="*")]
-        void BorrarMoneda(int monid);
+        Presentacion.WebServiceTV.TipoError BorrarMoneda(int monid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/BorrarMoneda", ReplyAction="*")]
-        System.Threading.Tasks.Task BorrarMonedaAsync(int monid);
+        System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> BorrarMonedaAsync(int monid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/ModificarMonedaCotizacion", ReplyAction="*")]
-        void ModificarMonedaCotizacion(int monedaid, decimal cotiza);
+        Presentacion.WebServiceTV.TipoError ModificarMonedaCotizacion(int monedaid, decimal cotiza);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/ModificarMonedaCotizacion", ReplyAction="*")]
-        System.Threading.Tasks.Task ModificarMonedaCotizacionAsync(int monedaid, decimal cotiza);
+        System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> ModificarMonedaCotizacionAsync(int monedaid, decimal cotiza);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ListarMonedasResult del espacio de nombres http://TiendaVirtual.com/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/ListarMonedas", ReplyAction="*")]
         Presentacion.WebServiceTV.ListarMonedasResponse ListarMonedas(Presentacion.WebServiceTV.ListarMonedasRequest request);
         
@@ -785,10 +875,10 @@ namespace Presentacion.WebServiceTV {
         System.Threading.Tasks.Task<Presentacion.WebServiceTV.InsertarProductoResponse> InsertarProductoAsync(Presentacion.WebServiceTV.InsertarProductoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/BorrarProducto", ReplyAction="*")]
-        void BorrarProducto(int proid);
+        Presentacion.WebServiceTV.TipoError BorrarProducto(int proid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/BorrarProducto", ReplyAction="*")]
-        System.Threading.Tasks.Task BorrarProductoAsync(int proid);
+        System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> BorrarProductoAsync(int proid);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento provo del espacio de nombres http://TiendaVirtual.com/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/ModificarProducto", ReplyAction="*")]
@@ -798,18 +888,17 @@ namespace Presentacion.WebServiceTV {
         System.Threading.Tasks.Task<Presentacion.WebServiceTV.ModificarProductoResponse> ModificarProductoAsync(Presentacion.WebServiceTV.ModificarProductoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/ModificarStockProducto", ReplyAction="*")]
-        void ModificarStockProducto(int proid, int stock);
+        Presentacion.WebServiceTV.TipoError ModificarStockProducto(int proid, int stock);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/ModificarStockProducto", ReplyAction="*")]
-        System.Threading.Tasks.Task ModificarStockProductoAsync(int proid, int stock);
+        System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> ModificarStockProductoAsync(int proid, int stock);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/HabilitarProducto", ReplyAction="*")]
-        void HabilitarProducto(int proid, bool habilito);
+        Presentacion.WebServiceTV.TipoError HabilitarProducto(int proid, bool habilito);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/HabilitarProducto", ReplyAction="*")]
-        System.Threading.Tasks.Task HabilitarProductoAsync(int proid, bool habilito);
+        System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> HabilitarProductoAsync(int proid, bool habilito);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ListarProductosResult del espacio de nombres http://TiendaVirtual.com/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/ListarProductos", ReplyAction="*")]
         Presentacion.WebServiceTV.ListarProductosResponse ListarProductos(Presentacion.WebServiceTV.ListarProductosRequest request);
         
@@ -824,10 +913,10 @@ namespace Presentacion.WebServiceTV {
         System.Threading.Tasks.Task<Presentacion.WebServiceTV.InsertarRolResponse> InsertarRolAsync(Presentacion.WebServiceTV.InsertarRolRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/BorrarRol", ReplyAction="*")]
-        void BorrarRol(int rolid);
+        Presentacion.WebServiceTV.TipoError BorrarRol(int rolid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/BorrarRol", ReplyAction="*")]
-        System.Threading.Tasks.Task BorrarRolAsync(int rolid);
+        System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> BorrarRolAsync(int rolid);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento nomb del espacio de nombres http://TiendaVirtual.com/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/ModificarRol", ReplyAction="*")]
@@ -836,7 +925,6 @@ namespace Presentacion.WebServiceTV {
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/ModificarRol", ReplyAction="*")]
         System.Threading.Tasks.Task<Presentacion.WebServiceTV.ModificarRolResponse> ModificarRolAsync(Presentacion.WebServiceTV.ModificarRolRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ListarRolesResult del espacio de nombres http://TiendaVirtual.com/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/ListarRoles", ReplyAction="*")]
         Presentacion.WebServiceTV.ListarRolesResponse ListarRoles(Presentacion.WebServiceTV.ListarRolesRequest request);
         
@@ -844,12 +932,11 @@ namespace Presentacion.WebServiceTV {
         System.Threading.Tasks.Task<Presentacion.WebServiceTV.ListarRolesResponse> ListarRolesAsync(Presentacion.WebServiceTV.ListarRolesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/BorrarCliente", ReplyAction="*")]
-        void BorrarCliente(int cliid);
+        Presentacion.WebServiceTV.TipoError BorrarCliente(int cliid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/BorrarCliente", ReplyAction="*")]
-        System.Threading.Tasks.Task BorrarClienteAsync(int cliid);
+        System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> BorrarClienteAsync(int cliid);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ListarClientesResult del espacio de nombres http://TiendaVirtual.com/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://TiendaVirtual.com/ListarClientes", ReplyAction="*")]
         Presentacion.WebServiceTV.ListarClientesResponse ListarClientes(Presentacion.WebServiceTV.ListarClientesRequest request);
         
@@ -861,15 +948,15 @@ namespace Presentacion.WebServiceTV {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class UsuarioLoginRequest {
+    public partial class UsuarioLoginWINRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="UsuarioLogin", Namespace="http://TiendaVirtual.com/", Order=0)]
-        public Presentacion.WebServiceTV.UsuarioLoginRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UsuarioLoginWIN", Namespace="http://TiendaVirtual.com/", Order=0)]
+        public Presentacion.WebServiceTV.UsuarioLoginWINRequestBody Body;
         
-        public UsuarioLoginRequest() {
+        public UsuarioLoginWINRequest() {
         }
         
-        public UsuarioLoginRequest(Presentacion.WebServiceTV.UsuarioLoginRequestBody Body) {
+        public UsuarioLoginWINRequest(Presentacion.WebServiceTV.UsuarioLoginWINRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -878,7 +965,7 @@ namespace Presentacion.WebServiceTV {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://TiendaVirtual.com/")]
-    public partial class UsuarioLoginRequestBody {
+    public partial class UsuarioLoginWINRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
         public string mail;
@@ -886,10 +973,10 @@ namespace Presentacion.WebServiceTV {
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
         public string password;
         
-        public UsuarioLoginRequestBody() {
+        public UsuarioLoginWINRequestBody() {
         }
         
-        public UsuarioLoginRequestBody(string mail, string password) {
+        public UsuarioLoginWINRequestBody(string mail, string password) {
             this.mail = mail;
             this.password = password;
         }
@@ -899,15 +986,15 @@ namespace Presentacion.WebServiceTV {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class UsuarioLoginResponse {
+    public partial class UsuarioLoginWINResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="UsuarioLoginResponse", Namespace="http://TiendaVirtual.com/", Order=0)]
-        public Presentacion.WebServiceTV.UsuarioLoginResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UsuarioLoginWINResponse", Namespace="http://TiendaVirtual.com/", Order=0)]
+        public Presentacion.WebServiceTV.UsuarioLoginWINResponseBody Body;
         
-        public UsuarioLoginResponse() {
+        public UsuarioLoginWINResponse() {
         }
         
-        public UsuarioLoginResponse(Presentacion.WebServiceTV.UsuarioLoginResponseBody Body) {
+        public UsuarioLoginWINResponse(Presentacion.WebServiceTV.UsuarioLoginWINResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -916,16 +1003,16 @@ namespace Presentacion.WebServiceTV {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://TiendaVirtual.com/")]
-    public partial class UsuarioLoginResponseBody {
+    public partial class UsuarioLoginWINResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public bool UsuarioLoginResult;
+        public Presentacion.WebServiceTV.TipoError UsuarioLoginWINResult;
         
-        public UsuarioLoginResponseBody() {
+        public UsuarioLoginWINResponseBody() {
         }
         
-        public UsuarioLoginResponseBody(bool UsuarioLoginResult) {
-            this.UsuarioLoginResult = UsuarioLoginResult;
+        public UsuarioLoginWINResponseBody(Presentacion.WebServiceTV.TipoError UsuarioLoginWINResult) {
+            this.UsuarioLoginWINResult = UsuarioLoginWINResult;
         }
     }
     
@@ -983,10 +1070,17 @@ namespace Presentacion.WebServiceTV {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://TiendaVirtual.com/")]
     public partial class InsertarCategoriaResponseBody {
         
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public Presentacion.WebServiceTV.TipoError InsertarCategoriaResult;
+        
         public InsertarCategoriaResponseBody() {
+        }
+        
+        public InsertarCategoriaResponseBody(Presentacion.WebServiceTV.TipoError InsertarCategoriaResult) {
+            this.InsertarCategoriaResult = InsertarCategoriaResult;
         }
     }
     
@@ -1048,16 +1142,22 @@ namespace Presentacion.WebServiceTV {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://TiendaVirtual.com/")]
     public partial class ModificarDescripcionCategoriaResponseBody {
         
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public Presentacion.WebServiceTV.TipoError ModificarDescripcionCategoriaResult;
+        
         public ModificarDescripcionCategoriaResponseBody() {
+        }
+        
+        public ModificarDescripcionCategoriaResponseBody(Presentacion.WebServiceTV.TipoError ModificarDescripcionCategoriaResult) {
+            this.ModificarDescripcionCategoriaResult = ModificarDescripcionCategoriaResult;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ListarCategoriasRequest {
         
@@ -1074,7 +1174,6 @@ namespace Presentacion.WebServiceTV {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute()]
     public partial class ListarCategoriasRequestBody {
         
@@ -1084,7 +1183,6 @@ namespace Presentacion.WebServiceTV {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ListarCategoriasResponse {
         
@@ -1101,24 +1199,26 @@ namespace Presentacion.WebServiceTV {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://TiendaVirtual.com/")]
     public partial class ListarCategoriasResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public Presentacion.WebServiceTV.CategoriaVO[] ListarCategoriasResult;
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public Presentacion.WebServiceTV.TipoError ListarCategoriasResult;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public Presentacion.WebServiceTV.CategoriaVO[] lista;
         
         public ListarCategoriasResponseBody() {
         }
         
-        public ListarCategoriasResponseBody(Presentacion.WebServiceTV.CategoriaVO[] ListarCategoriasResult) {
+        public ListarCategoriasResponseBody(Presentacion.WebServiceTV.TipoError ListarCategoriasResult, Presentacion.WebServiceTV.CategoriaVO[] lista) {
             this.ListarCategoriasResult = ListarCategoriasResult;
+            this.lista = lista;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class DarCategoriaRequest {
         
@@ -1135,7 +1235,6 @@ namespace Presentacion.WebServiceTV {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://TiendaVirtual.com/")]
     public partial class DarCategoriaRequestBody {
         
@@ -1152,7 +1251,6 @@ namespace Presentacion.WebServiceTV {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class DarCategoriaResponse {
         
@@ -1169,18 +1267,129 @@ namespace Presentacion.WebServiceTV {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://TiendaVirtual.com/")]
     public partial class DarCategoriaResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public Presentacion.WebServiceTV.CategoriaVO DarCategoriaResult;
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public Presentacion.WebServiceTV.TipoError DarCategoriaResult;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public Presentacion.WebServiceTV.CategoriaVO catvo;
         
         public DarCategoriaResponseBody() {
         }
         
-        public DarCategoriaResponseBody(Presentacion.WebServiceTV.CategoriaVO DarCategoriaResult) {
+        public DarCategoriaResponseBody(Presentacion.WebServiceTV.TipoError DarCategoriaResult, Presentacion.WebServiceTV.CategoriaVO catvo) {
             this.DarCategoriaResult = DarCategoriaResult;
+            this.catvo = catvo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="EstadoCategoria", WrapperNamespace="http://TiendaVirtual.com/", IsWrapped=true)]
+    public partial class EstadoCategoriaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://TiendaVirtual.com/", Order=0)]
+        public int catid;
+        
+        public EstadoCategoriaRequest() {
+        }
+        
+        public EstadoCategoriaRequest(int catid) {
+            this.catid = catid;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="EstadoCategoriaResponse", WrapperNamespace="http://TiendaVirtual.com/", IsWrapped=true)]
+    public partial class EstadoCategoriaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://TiendaVirtual.com/", Order=0)]
+        public Presentacion.WebServiceTV.TipoError EstadoCategoriaResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://TiendaVirtual.com/", Order=1)]
+        public bool activo;
+        
+        public EstadoCategoriaResponse() {
+        }
+        
+        public EstadoCategoriaResponse(Presentacion.WebServiceTV.TipoError EstadoCategoriaResult, bool activo) {
+            this.EstadoCategoriaResult = EstadoCategoriaResult;
+            this.activo = activo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ModificarNombreCategoriaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ModificarNombreCategoria", Namespace="http://TiendaVirtual.com/", Order=0)]
+        public Presentacion.WebServiceTV.ModificarNombreCategoriaRequestBody Body;
+        
+        public ModificarNombreCategoriaRequest() {
+        }
+        
+        public ModificarNombreCategoriaRequest(Presentacion.WebServiceTV.ModificarNombreCategoriaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://TiendaVirtual.com/")]
+    public partial class ModificarNombreCategoriaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int catid;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string nom;
+        
+        public ModificarNombreCategoriaRequestBody() {
+        }
+        
+        public ModificarNombreCategoriaRequestBody(int catid, string nom) {
+            this.catid = catid;
+            this.nom = nom;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ModificarNombreCategoriaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ModificarNombreCategoriaResponse", Namespace="http://TiendaVirtual.com/", Order=0)]
+        public Presentacion.WebServiceTV.ModificarNombreCategoriaResponseBody Body;
+        
+        public ModificarNombreCategoriaResponse() {
+        }
+        
+        public ModificarNombreCategoriaResponse(Presentacion.WebServiceTV.ModificarNombreCategoriaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://TiendaVirtual.com/")]
+    public partial class ModificarNombreCategoriaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public Presentacion.WebServiceTV.TipoError ModificarNombreCategoriaResult;
+        
+        public ModificarNombreCategoriaResponseBody() {
+        }
+        
+        public ModificarNombreCategoriaResponseBody(Presentacion.WebServiceTV.TipoError ModificarNombreCategoriaResult) {
+            this.ModificarNombreCategoriaResult = ModificarNombreCategoriaResult;
         }
     }
     
@@ -1238,16 +1447,22 @@ namespace Presentacion.WebServiceTV {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://TiendaVirtual.com/")]
     public partial class InsertarBackofficeResponseBody {
         
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public Presentacion.WebServiceTV.TipoError InsertarBackofficeResult;
+        
         public InsertarBackofficeResponseBody() {
+        }
+        
+        public InsertarBackofficeResponseBody(Presentacion.WebServiceTV.TipoError InsertarBackofficeResult) {
+            this.InsertarBackofficeResult = InsertarBackofficeResult;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ListarBackofficeRequest {
         
@@ -1264,7 +1479,6 @@ namespace Presentacion.WebServiceTV {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute()]
     public partial class ListarBackofficeRequestBody {
         
@@ -1274,7 +1488,6 @@ namespace Presentacion.WebServiceTV {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ListarBackofficeResponse {
         
@@ -1291,18 +1504,21 @@ namespace Presentacion.WebServiceTV {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://TiendaVirtual.com/")]
     public partial class ListarBackofficeResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public Presentacion.WebServiceTV.BackofficeVO[] ListarBackofficeResult;
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public Presentacion.WebServiceTV.TipoError ListarBackofficeResult;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public Presentacion.WebServiceTV.BackofficeVO[] lista;
         
         public ListarBackofficeResponseBody() {
         }
         
-        public ListarBackofficeResponseBody(Presentacion.WebServiceTV.BackofficeVO[] ListarBackofficeResult) {
+        public ListarBackofficeResponseBody(Presentacion.WebServiceTV.TipoError ListarBackofficeResult, Presentacion.WebServiceTV.BackofficeVO[] lista) {
             this.ListarBackofficeResult = ListarBackofficeResult;
+            this.lista = lista;
         }
     }
     
@@ -1360,16 +1576,22 @@ namespace Presentacion.WebServiceTV {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://TiendaVirtual.com/")]
     public partial class InsertarMonedaResponseBody {
         
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public Presentacion.WebServiceTV.TipoError InsertarMonedaResult;
+        
         public InsertarMonedaResponseBody() {
+        }
+        
+        public InsertarMonedaResponseBody(Presentacion.WebServiceTV.TipoError InsertarMonedaResult) {
+            this.InsertarMonedaResult = InsertarMonedaResult;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ListarMonedasRequest {
         
@@ -1386,7 +1608,6 @@ namespace Presentacion.WebServiceTV {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute()]
     public partial class ListarMonedasRequestBody {
         
@@ -1396,7 +1617,6 @@ namespace Presentacion.WebServiceTV {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ListarMonedasResponse {
         
@@ -1413,18 +1633,21 @@ namespace Presentacion.WebServiceTV {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://TiendaVirtual.com/")]
     public partial class ListarMonedasResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public Presentacion.WebServiceTV.MonedaVO[] ListarMonedasResult;
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public Presentacion.WebServiceTV.TipoError ListarMonedasResult;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public Presentacion.WebServiceTV.MonedaVO[] lista;
         
         public ListarMonedasResponseBody() {
         }
         
-        public ListarMonedasResponseBody(Presentacion.WebServiceTV.MonedaVO[] ListarMonedasResult) {
+        public ListarMonedasResponseBody(Presentacion.WebServiceTV.TipoError ListarMonedasResult, Presentacion.WebServiceTV.MonedaVO[] lista) {
             this.ListarMonedasResult = ListarMonedasResult;
+            this.lista = lista;
         }
     }
     
@@ -1482,10 +1705,17 @@ namespace Presentacion.WebServiceTV {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://TiendaVirtual.com/")]
     public partial class InsertarProductoResponseBody {
         
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public Presentacion.WebServiceTV.TipoError InsertarProductoResult;
+        
         public InsertarProductoResponseBody() {
+        }
+        
+        public InsertarProductoResponseBody(Presentacion.WebServiceTV.TipoError InsertarProductoResult) {
+            this.InsertarProductoResult = InsertarProductoResult;
         }
     }
     
@@ -1543,16 +1773,22 @@ namespace Presentacion.WebServiceTV {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://TiendaVirtual.com/")]
     public partial class ModificarProductoResponseBody {
         
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public Presentacion.WebServiceTV.TipoError ModificarProductoResult;
+        
         public ModificarProductoResponseBody() {
+        }
+        
+        public ModificarProductoResponseBody(Presentacion.WebServiceTV.TipoError ModificarProductoResult) {
+            this.ModificarProductoResult = ModificarProductoResult;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ListarProductosRequest {
         
@@ -1569,7 +1805,6 @@ namespace Presentacion.WebServiceTV {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute()]
     public partial class ListarProductosRequestBody {
         
@@ -1579,7 +1814,6 @@ namespace Presentacion.WebServiceTV {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ListarProductosResponse {
         
@@ -1596,18 +1830,21 @@ namespace Presentacion.WebServiceTV {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://TiendaVirtual.com/")]
     public partial class ListarProductosResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public Presentacion.WebServiceTV.ProductoVO[] ListarProductosResult;
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public Presentacion.WebServiceTV.TipoError ListarProductosResult;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public Presentacion.WebServiceTV.ProductoVO[] lista;
         
         public ListarProductosResponseBody() {
         }
         
-        public ListarProductosResponseBody(Presentacion.WebServiceTV.ProductoVO[] ListarProductosResult) {
+        public ListarProductosResponseBody(Presentacion.WebServiceTV.TipoError ListarProductosResult, Presentacion.WebServiceTV.ProductoVO[] lista) {
             this.ListarProductosResult = ListarProductosResult;
+            this.lista = lista;
         }
     }
     
@@ -1665,10 +1902,17 @@ namespace Presentacion.WebServiceTV {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://TiendaVirtual.com/")]
     public partial class InsertarRolResponseBody {
         
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public Presentacion.WebServiceTV.TipoError InsertarRolResult;
+        
         public InsertarRolResponseBody() {
+        }
+        
+        public InsertarRolResponseBody(Presentacion.WebServiceTV.TipoError InsertarRolResult) {
+            this.InsertarRolResult = InsertarRolResult;
         }
     }
     
@@ -1730,16 +1974,22 @@ namespace Presentacion.WebServiceTV {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://TiendaVirtual.com/")]
     public partial class ModificarRolResponseBody {
         
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public Presentacion.WebServiceTV.TipoError ModificarRolResult;
+        
         public ModificarRolResponseBody() {
+        }
+        
+        public ModificarRolResponseBody(Presentacion.WebServiceTV.TipoError ModificarRolResult) {
+            this.ModificarRolResult = ModificarRolResult;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ListarRolesRequest {
         
@@ -1756,7 +2006,6 @@ namespace Presentacion.WebServiceTV {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute()]
     public partial class ListarRolesRequestBody {
         
@@ -1766,7 +2015,6 @@ namespace Presentacion.WebServiceTV {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ListarRolesResponse {
         
@@ -1783,24 +2031,26 @@ namespace Presentacion.WebServiceTV {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://TiendaVirtual.com/")]
     public partial class ListarRolesResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public Presentacion.WebServiceTV.RolVO[] ListarRolesResult;
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public Presentacion.WebServiceTV.TipoError ListarRolesResult;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public Presentacion.WebServiceTV.RolVO[] lista;
         
         public ListarRolesResponseBody() {
         }
         
-        public ListarRolesResponseBody(Presentacion.WebServiceTV.RolVO[] ListarRolesResult) {
+        public ListarRolesResponseBody(Presentacion.WebServiceTV.TipoError ListarRolesResult, Presentacion.WebServiceTV.RolVO[] lista) {
             this.ListarRolesResult = ListarRolesResult;
+            this.lista = lista;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ListarClientesRequest {
         
@@ -1817,7 +2067,6 @@ namespace Presentacion.WebServiceTV {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute()]
     public partial class ListarClientesRequestBody {
         
@@ -1827,7 +2076,6 @@ namespace Presentacion.WebServiceTV {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ListarClientesResponse {
         
@@ -1844,18 +2092,21 @@ namespace Presentacion.WebServiceTV {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://TiendaVirtual.com/")]
     public partial class ListarClientesResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public Presentacion.WebServiceTV.ClienteVO[] ListarClientesResult;
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public Presentacion.WebServiceTV.TipoError ListarClientesResult;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public Presentacion.WebServiceTV.ClienteVO[] lista;
         
         public ListarClientesResponseBody() {
         }
         
-        public ListarClientesResponseBody(Presentacion.WebServiceTV.ClienteVO[] ListarClientesResult) {
+        public ListarClientesResponseBody(Presentacion.WebServiceTV.TipoError ListarClientesResult, Presentacion.WebServiceTV.ClienteVO[] lista) {
             this.ListarClientesResult = ListarClientesResult;
+            this.lista = lista;
         }
     }
     
@@ -1887,30 +2138,38 @@ namespace Presentacion.WebServiceTV {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Presentacion.WebServiceTV.UsuarioLoginResponse Presentacion.WebServiceTV.WebServiceSoap.UsuarioLogin(Presentacion.WebServiceTV.UsuarioLoginRequest request) {
-            return base.Channel.UsuarioLogin(request);
+        Presentacion.WebServiceTV.UsuarioLoginWINResponse Presentacion.WebServiceTV.WebServiceSoap.UsuarioLoginWIN(Presentacion.WebServiceTV.UsuarioLoginWINRequest request) {
+            return base.Channel.UsuarioLoginWIN(request);
         }
         
-        public bool UsuarioLogin(string mail, string password) {
-            Presentacion.WebServiceTV.UsuarioLoginRequest inValue = new Presentacion.WebServiceTV.UsuarioLoginRequest();
-            inValue.Body = new Presentacion.WebServiceTV.UsuarioLoginRequestBody();
+        public Presentacion.WebServiceTV.TipoError UsuarioLoginWIN(string mail, string password) {
+            Presentacion.WebServiceTV.UsuarioLoginWINRequest inValue = new Presentacion.WebServiceTV.UsuarioLoginWINRequest();
+            inValue.Body = new Presentacion.WebServiceTV.UsuarioLoginWINRequestBody();
             inValue.Body.mail = mail;
             inValue.Body.password = password;
-            Presentacion.WebServiceTV.UsuarioLoginResponse retVal = ((Presentacion.WebServiceTV.WebServiceSoap)(this)).UsuarioLogin(inValue);
-            return retVal.Body.UsuarioLoginResult;
+            Presentacion.WebServiceTV.UsuarioLoginWINResponse retVal = ((Presentacion.WebServiceTV.WebServiceSoap)(this)).UsuarioLoginWIN(inValue);
+            return retVal.Body.UsuarioLoginWINResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Presentacion.WebServiceTV.UsuarioLoginResponse> Presentacion.WebServiceTV.WebServiceSoap.UsuarioLoginAsync(Presentacion.WebServiceTV.UsuarioLoginRequest request) {
-            return base.Channel.UsuarioLoginAsync(request);
+        System.Threading.Tasks.Task<Presentacion.WebServiceTV.UsuarioLoginWINResponse> Presentacion.WebServiceTV.WebServiceSoap.UsuarioLoginWINAsync(Presentacion.WebServiceTV.UsuarioLoginWINRequest request) {
+            return base.Channel.UsuarioLoginWINAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Presentacion.WebServiceTV.UsuarioLoginResponse> UsuarioLoginAsync(string mail, string password) {
-            Presentacion.WebServiceTV.UsuarioLoginRequest inValue = new Presentacion.WebServiceTV.UsuarioLoginRequest();
-            inValue.Body = new Presentacion.WebServiceTV.UsuarioLoginRequestBody();
+        public System.Threading.Tasks.Task<Presentacion.WebServiceTV.UsuarioLoginWINResponse> UsuarioLoginWINAsync(string mail, string password) {
+            Presentacion.WebServiceTV.UsuarioLoginWINRequest inValue = new Presentacion.WebServiceTV.UsuarioLoginWINRequest();
+            inValue.Body = new Presentacion.WebServiceTV.UsuarioLoginWINRequestBody();
             inValue.Body.mail = mail;
             inValue.Body.password = password;
-            return ((Presentacion.WebServiceTV.WebServiceSoap)(this)).UsuarioLoginAsync(inValue);
+            return ((Presentacion.WebServiceTV.WebServiceSoap)(this)).UsuarioLoginWINAsync(inValue);
+        }
+        
+        public Presentacion.WebServiceTV.TipoError ActivaUsuario(int usrid, bool activo) {
+            return base.Channel.ActivaUsuario(usrid, activo);
+        }
+        
+        public System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> ActivaUsuarioAsync(int usrid, bool activo) {
+            return base.Channel.ActivaUsuarioAsync(usrid, activo);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1918,11 +2177,12 @@ namespace Presentacion.WebServiceTV {
             return base.Channel.InsertarCategoria(request);
         }
         
-        public void InsertarCategoria(Presentacion.WebServiceTV.CategoriaVO catvo) {
+        public Presentacion.WebServiceTV.TipoError InsertarCategoria(Presentacion.WebServiceTV.CategoriaVO catvo) {
             Presentacion.WebServiceTV.InsertarCategoriaRequest inValue = new Presentacion.WebServiceTV.InsertarCategoriaRequest();
             inValue.Body = new Presentacion.WebServiceTV.InsertarCategoriaRequestBody();
             inValue.Body.catvo = catvo;
             Presentacion.WebServiceTV.InsertarCategoriaResponse retVal = ((Presentacion.WebServiceTV.WebServiceSoap)(this)).InsertarCategoria(inValue);
+            return retVal.Body.InsertarCategoriaResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1937,11 +2197,11 @@ namespace Presentacion.WebServiceTV {
             return ((Presentacion.WebServiceTV.WebServiceSoap)(this)).InsertarCategoriaAsync(inValue);
         }
         
-        public void BorrarCategoria(int catid) {
-            base.Channel.BorrarCategoria(catid);
+        public Presentacion.WebServiceTV.TipoError BorrarCategoria(int catid) {
+            return base.Channel.BorrarCategoria(catid);
         }
         
-        public System.Threading.Tasks.Task BorrarCategoriaAsync(int catid) {
+        public System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> BorrarCategoriaAsync(int catid) {
             return base.Channel.BorrarCategoriaAsync(catid);
         }
         
@@ -1950,12 +2210,13 @@ namespace Presentacion.WebServiceTV {
             return base.Channel.ModificarDescripcionCategoria(request);
         }
         
-        public void ModificarDescripcionCategoria(int cateid, string desc) {
+        public Presentacion.WebServiceTV.TipoError ModificarDescripcionCategoria(int cateid, string desc) {
             Presentacion.WebServiceTV.ModificarDescripcionCategoriaRequest inValue = new Presentacion.WebServiceTV.ModificarDescripcionCategoriaRequest();
             inValue.Body = new Presentacion.WebServiceTV.ModificarDescripcionCategoriaRequestBody();
             inValue.Body.cateid = cateid;
             inValue.Body.desc = desc;
             Presentacion.WebServiceTV.ModificarDescripcionCategoriaResponse retVal = ((Presentacion.WebServiceTV.WebServiceSoap)(this)).ModificarDescripcionCategoria(inValue);
+            return retVal.Body.ModificarDescripcionCategoriaResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1976,10 +2237,11 @@ namespace Presentacion.WebServiceTV {
             return base.Channel.ListarCategorias(request);
         }
         
-        public Presentacion.WebServiceTV.CategoriaVO[] ListarCategorias() {
+        public Presentacion.WebServiceTV.TipoError ListarCategorias(out Presentacion.WebServiceTV.CategoriaVO[] lista) {
             Presentacion.WebServiceTV.ListarCategoriasRequest inValue = new Presentacion.WebServiceTV.ListarCategoriasRequest();
             inValue.Body = new Presentacion.WebServiceTV.ListarCategoriasRequestBody();
             Presentacion.WebServiceTV.ListarCategoriasResponse retVal = ((Presentacion.WebServiceTV.WebServiceSoap)(this)).ListarCategorias(inValue);
+            lista = retVal.Body.lista;
             return retVal.Body.ListarCategoriasResult;
         }
         
@@ -1999,11 +2261,12 @@ namespace Presentacion.WebServiceTV {
             return base.Channel.DarCategoria(request);
         }
         
-        public Presentacion.WebServiceTV.CategoriaVO DarCategoria(int catid) {
+        public Presentacion.WebServiceTV.TipoError DarCategoria(int catid, out Presentacion.WebServiceTV.CategoriaVO catvo) {
             Presentacion.WebServiceTV.DarCategoriaRequest inValue = new Presentacion.WebServiceTV.DarCategoriaRequest();
             inValue.Body = new Presentacion.WebServiceTV.DarCategoriaRequestBody();
             inValue.Body.catid = catid;
             Presentacion.WebServiceTV.DarCategoriaResponse retVal = ((Presentacion.WebServiceTV.WebServiceSoap)(this)).DarCategoria(inValue);
+            catvo = retVal.Body.catvo;
             return retVal.Body.DarCategoriaResult;
         }
         
@@ -2020,15 +2283,68 @@ namespace Presentacion.WebServiceTV {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Presentacion.WebServiceTV.EstadoCategoriaResponse Presentacion.WebServiceTV.WebServiceSoap.EstadoCategoria(Presentacion.WebServiceTV.EstadoCategoriaRequest request) {
+            return base.Channel.EstadoCategoria(request);
+        }
+        
+        public Presentacion.WebServiceTV.TipoError EstadoCategoria(int catid, out bool activo) {
+            Presentacion.WebServiceTV.EstadoCategoriaRequest inValue = new Presentacion.WebServiceTV.EstadoCategoriaRequest();
+            inValue.catid = catid;
+            Presentacion.WebServiceTV.EstadoCategoriaResponse retVal = ((Presentacion.WebServiceTV.WebServiceSoap)(this)).EstadoCategoria(inValue);
+            activo = retVal.activo;
+            return retVal.EstadoCategoriaResult;
+        }
+        
+        public System.Threading.Tasks.Task<Presentacion.WebServiceTV.EstadoCategoriaResponse> EstadoCategoriaAsync(Presentacion.WebServiceTV.EstadoCategoriaRequest request) {
+            return base.Channel.EstadoCategoriaAsync(request);
+        }
+        
+        public Presentacion.WebServiceTV.TipoError ActivarCategoria(int catid, bool activa) {
+            return base.Channel.ActivarCategoria(catid, activa);
+        }
+        
+        public System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> ActivarCategoriaAsync(int catid, bool activa) {
+            return base.Channel.ActivarCategoriaAsync(catid, activa);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Presentacion.WebServiceTV.ModificarNombreCategoriaResponse Presentacion.WebServiceTV.WebServiceSoap.ModificarNombreCategoria(Presentacion.WebServiceTV.ModificarNombreCategoriaRequest request) {
+            return base.Channel.ModificarNombreCategoria(request);
+        }
+        
+        public Presentacion.WebServiceTV.TipoError ModificarNombreCategoria(int catid, string nom) {
+            Presentacion.WebServiceTV.ModificarNombreCategoriaRequest inValue = new Presentacion.WebServiceTV.ModificarNombreCategoriaRequest();
+            inValue.Body = new Presentacion.WebServiceTV.ModificarNombreCategoriaRequestBody();
+            inValue.Body.catid = catid;
+            inValue.Body.nom = nom;
+            Presentacion.WebServiceTV.ModificarNombreCategoriaResponse retVal = ((Presentacion.WebServiceTV.WebServiceSoap)(this)).ModificarNombreCategoria(inValue);
+            return retVal.Body.ModificarNombreCategoriaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Presentacion.WebServiceTV.ModificarNombreCategoriaResponse> Presentacion.WebServiceTV.WebServiceSoap.ModificarNombreCategoriaAsync(Presentacion.WebServiceTV.ModificarNombreCategoriaRequest request) {
+            return base.Channel.ModificarNombreCategoriaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Presentacion.WebServiceTV.ModificarNombreCategoriaResponse> ModificarNombreCategoriaAsync(int catid, string nom) {
+            Presentacion.WebServiceTV.ModificarNombreCategoriaRequest inValue = new Presentacion.WebServiceTV.ModificarNombreCategoriaRequest();
+            inValue.Body = new Presentacion.WebServiceTV.ModificarNombreCategoriaRequestBody();
+            inValue.Body.catid = catid;
+            inValue.Body.nom = nom;
+            return ((Presentacion.WebServiceTV.WebServiceSoap)(this)).ModificarNombreCategoriaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Presentacion.WebServiceTV.InsertarBackofficeResponse Presentacion.WebServiceTV.WebServiceSoap.InsertarBackoffice(Presentacion.WebServiceTV.InsertarBackofficeRequest request) {
             return base.Channel.InsertarBackoffice(request);
         }
         
-        public void InsertarBackoffice(Presentacion.WebServiceTV.BackofficeInsVO bacvo) {
+        public Presentacion.WebServiceTV.TipoError InsertarBackoffice(Presentacion.WebServiceTV.BackofficeInsVO bacvo) {
             Presentacion.WebServiceTV.InsertarBackofficeRequest inValue = new Presentacion.WebServiceTV.InsertarBackofficeRequest();
             inValue.Body = new Presentacion.WebServiceTV.InsertarBackofficeRequestBody();
             inValue.Body.bacvo = bacvo;
             Presentacion.WebServiceTV.InsertarBackofficeResponse retVal = ((Presentacion.WebServiceTV.WebServiceSoap)(this)).InsertarBackoffice(inValue);
+            return retVal.Body.InsertarBackofficeResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2043,19 +2359,19 @@ namespace Presentacion.WebServiceTV {
             return ((Presentacion.WebServiceTV.WebServiceSoap)(this)).InsertarBackofficeAsync(inValue);
         }
         
-        public void BorrarBackoffice(int bacid) {
-            base.Channel.BorrarBackoffice(bacid);
+        public Presentacion.WebServiceTV.TipoError BorrarBackoffice(int bacid) {
+            return base.Channel.BorrarBackoffice(bacid);
         }
         
-        public System.Threading.Tasks.Task BorrarBackofficeAsync(int bacid) {
+        public System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> BorrarBackofficeAsync(int bacid) {
             return base.Channel.BorrarBackofficeAsync(bacid);
         }
         
-        public void CambiarRolBackoffice(int bacid, int rolid) {
-            base.Channel.CambiarRolBackoffice(bacid, rolid);
+        public Presentacion.WebServiceTV.TipoError CambiarRolBackoffice(int bacid, int rolid) {
+            return base.Channel.CambiarRolBackoffice(bacid, rolid);
         }
         
-        public System.Threading.Tasks.Task CambiarRolBackofficeAsync(int bacid, int rolid) {
+        public System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> CambiarRolBackofficeAsync(int bacid, int rolid) {
             return base.Channel.CambiarRolBackofficeAsync(bacid, rolid);
         }
         
@@ -2064,10 +2380,11 @@ namespace Presentacion.WebServiceTV {
             return base.Channel.ListarBackoffice(request);
         }
         
-        public Presentacion.WebServiceTV.BackofficeVO[] ListarBackoffice() {
+        public Presentacion.WebServiceTV.TipoError ListarBackoffice(out Presentacion.WebServiceTV.BackofficeVO[] lista) {
             Presentacion.WebServiceTV.ListarBackofficeRequest inValue = new Presentacion.WebServiceTV.ListarBackofficeRequest();
             inValue.Body = new Presentacion.WebServiceTV.ListarBackofficeRequestBody();
             Presentacion.WebServiceTV.ListarBackofficeResponse retVal = ((Presentacion.WebServiceTV.WebServiceSoap)(this)).ListarBackoffice(inValue);
+            lista = retVal.Body.lista;
             return retVal.Body.ListarBackofficeResult;
         }
         
@@ -2087,11 +2404,12 @@ namespace Presentacion.WebServiceTV {
             return base.Channel.InsertarMoneda(request);
         }
         
-        public void InsertarMoneda(Presentacion.WebServiceTV.MonedaVO monvo) {
+        public Presentacion.WebServiceTV.TipoError InsertarMoneda(Presentacion.WebServiceTV.MonedaVO monvo) {
             Presentacion.WebServiceTV.InsertarMonedaRequest inValue = new Presentacion.WebServiceTV.InsertarMonedaRequest();
             inValue.Body = new Presentacion.WebServiceTV.InsertarMonedaRequestBody();
             inValue.Body.monvo = monvo;
             Presentacion.WebServiceTV.InsertarMonedaResponse retVal = ((Presentacion.WebServiceTV.WebServiceSoap)(this)).InsertarMoneda(inValue);
+            return retVal.Body.InsertarMonedaResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2106,19 +2424,19 @@ namespace Presentacion.WebServiceTV {
             return ((Presentacion.WebServiceTV.WebServiceSoap)(this)).InsertarMonedaAsync(inValue);
         }
         
-        public void BorrarMoneda(int monid) {
-            base.Channel.BorrarMoneda(monid);
+        public Presentacion.WebServiceTV.TipoError BorrarMoneda(int monid) {
+            return base.Channel.BorrarMoneda(monid);
         }
         
-        public System.Threading.Tasks.Task BorrarMonedaAsync(int monid) {
+        public System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> BorrarMonedaAsync(int monid) {
             return base.Channel.BorrarMonedaAsync(monid);
         }
         
-        public void ModificarMonedaCotizacion(int monedaid, decimal cotiza) {
-            base.Channel.ModificarMonedaCotizacion(monedaid, cotiza);
+        public Presentacion.WebServiceTV.TipoError ModificarMonedaCotizacion(int monedaid, decimal cotiza) {
+            return base.Channel.ModificarMonedaCotizacion(monedaid, cotiza);
         }
         
-        public System.Threading.Tasks.Task ModificarMonedaCotizacionAsync(int monedaid, decimal cotiza) {
+        public System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> ModificarMonedaCotizacionAsync(int monedaid, decimal cotiza) {
             return base.Channel.ModificarMonedaCotizacionAsync(monedaid, cotiza);
         }
         
@@ -2127,10 +2445,11 @@ namespace Presentacion.WebServiceTV {
             return base.Channel.ListarMonedas(request);
         }
         
-        public Presentacion.WebServiceTV.MonedaVO[] ListarMonedas() {
+        public Presentacion.WebServiceTV.TipoError ListarMonedas(out Presentacion.WebServiceTV.MonedaVO[] lista) {
             Presentacion.WebServiceTV.ListarMonedasRequest inValue = new Presentacion.WebServiceTV.ListarMonedasRequest();
             inValue.Body = new Presentacion.WebServiceTV.ListarMonedasRequestBody();
             Presentacion.WebServiceTV.ListarMonedasResponse retVal = ((Presentacion.WebServiceTV.WebServiceSoap)(this)).ListarMonedas(inValue);
+            lista = retVal.Body.lista;
             return retVal.Body.ListarMonedasResult;
         }
         
@@ -2150,11 +2469,12 @@ namespace Presentacion.WebServiceTV {
             return base.Channel.InsertarProducto(request);
         }
         
-        public void InsertarProducto(Presentacion.WebServiceTV.ProductoVO provo) {
+        public Presentacion.WebServiceTV.TipoError InsertarProducto(Presentacion.WebServiceTV.ProductoVO provo) {
             Presentacion.WebServiceTV.InsertarProductoRequest inValue = new Presentacion.WebServiceTV.InsertarProductoRequest();
             inValue.Body = new Presentacion.WebServiceTV.InsertarProductoRequestBody();
             inValue.Body.provo = provo;
             Presentacion.WebServiceTV.InsertarProductoResponse retVal = ((Presentacion.WebServiceTV.WebServiceSoap)(this)).InsertarProducto(inValue);
+            return retVal.Body.InsertarProductoResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2169,11 +2489,11 @@ namespace Presentacion.WebServiceTV {
             return ((Presentacion.WebServiceTV.WebServiceSoap)(this)).InsertarProductoAsync(inValue);
         }
         
-        public void BorrarProducto(int proid) {
-            base.Channel.BorrarProducto(proid);
+        public Presentacion.WebServiceTV.TipoError BorrarProducto(int proid) {
+            return base.Channel.BorrarProducto(proid);
         }
         
-        public System.Threading.Tasks.Task BorrarProductoAsync(int proid) {
+        public System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> BorrarProductoAsync(int proid) {
             return base.Channel.BorrarProductoAsync(proid);
         }
         
@@ -2182,11 +2502,12 @@ namespace Presentacion.WebServiceTV {
             return base.Channel.ModificarProducto(request);
         }
         
-        public void ModificarProducto(Presentacion.WebServiceTV.ProductoVO provo) {
+        public Presentacion.WebServiceTV.TipoError ModificarProducto(Presentacion.WebServiceTV.ProductoVO provo) {
             Presentacion.WebServiceTV.ModificarProductoRequest inValue = new Presentacion.WebServiceTV.ModificarProductoRequest();
             inValue.Body = new Presentacion.WebServiceTV.ModificarProductoRequestBody();
             inValue.Body.provo = provo;
             Presentacion.WebServiceTV.ModificarProductoResponse retVal = ((Presentacion.WebServiceTV.WebServiceSoap)(this)).ModificarProducto(inValue);
+            return retVal.Body.ModificarProductoResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2201,19 +2522,19 @@ namespace Presentacion.WebServiceTV {
             return ((Presentacion.WebServiceTV.WebServiceSoap)(this)).ModificarProductoAsync(inValue);
         }
         
-        public void ModificarStockProducto(int proid, int stock) {
-            base.Channel.ModificarStockProducto(proid, stock);
+        public Presentacion.WebServiceTV.TipoError ModificarStockProducto(int proid, int stock) {
+            return base.Channel.ModificarStockProducto(proid, stock);
         }
         
-        public System.Threading.Tasks.Task ModificarStockProductoAsync(int proid, int stock) {
+        public System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> ModificarStockProductoAsync(int proid, int stock) {
             return base.Channel.ModificarStockProductoAsync(proid, stock);
         }
         
-        public void HabilitarProducto(int proid, bool habilito) {
-            base.Channel.HabilitarProducto(proid, habilito);
+        public Presentacion.WebServiceTV.TipoError HabilitarProducto(int proid, bool habilito) {
+            return base.Channel.HabilitarProducto(proid, habilito);
         }
         
-        public System.Threading.Tasks.Task HabilitarProductoAsync(int proid, bool habilito) {
+        public System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> HabilitarProductoAsync(int proid, bool habilito) {
             return base.Channel.HabilitarProductoAsync(proid, habilito);
         }
         
@@ -2222,10 +2543,11 @@ namespace Presentacion.WebServiceTV {
             return base.Channel.ListarProductos(request);
         }
         
-        public Presentacion.WebServiceTV.ProductoVO[] ListarProductos() {
+        public Presentacion.WebServiceTV.TipoError ListarProductos(out Presentacion.WebServiceTV.ProductoVO[] lista) {
             Presentacion.WebServiceTV.ListarProductosRequest inValue = new Presentacion.WebServiceTV.ListarProductosRequest();
             inValue.Body = new Presentacion.WebServiceTV.ListarProductosRequestBody();
             Presentacion.WebServiceTV.ListarProductosResponse retVal = ((Presentacion.WebServiceTV.WebServiceSoap)(this)).ListarProductos(inValue);
+            lista = retVal.Body.lista;
             return retVal.Body.ListarProductosResult;
         }
         
@@ -2245,11 +2567,12 @@ namespace Presentacion.WebServiceTV {
             return base.Channel.InsertarRol(request);
         }
         
-        public void InsertarRol(Presentacion.WebServiceTV.RolVO rolvo) {
+        public Presentacion.WebServiceTV.TipoError InsertarRol(Presentacion.WebServiceTV.RolVO rolvo) {
             Presentacion.WebServiceTV.InsertarRolRequest inValue = new Presentacion.WebServiceTV.InsertarRolRequest();
             inValue.Body = new Presentacion.WebServiceTV.InsertarRolRequestBody();
             inValue.Body.rolvo = rolvo;
             Presentacion.WebServiceTV.InsertarRolResponse retVal = ((Presentacion.WebServiceTV.WebServiceSoap)(this)).InsertarRol(inValue);
+            return retVal.Body.InsertarRolResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2264,11 +2587,11 @@ namespace Presentacion.WebServiceTV {
             return ((Presentacion.WebServiceTV.WebServiceSoap)(this)).InsertarRolAsync(inValue);
         }
         
-        public void BorrarRol(int rolid) {
-            base.Channel.BorrarRol(rolid);
+        public Presentacion.WebServiceTV.TipoError BorrarRol(int rolid) {
+            return base.Channel.BorrarRol(rolid);
         }
         
-        public System.Threading.Tasks.Task BorrarRolAsync(int rolid) {
+        public System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> BorrarRolAsync(int rolid) {
             return base.Channel.BorrarRolAsync(rolid);
         }
         
@@ -2277,12 +2600,13 @@ namespace Presentacion.WebServiceTV {
             return base.Channel.ModificarRol(request);
         }
         
-        public void ModificarRol(int rolid, string nomb) {
+        public Presentacion.WebServiceTV.TipoError ModificarRol(int rolid, string nomb) {
             Presentacion.WebServiceTV.ModificarRolRequest inValue = new Presentacion.WebServiceTV.ModificarRolRequest();
             inValue.Body = new Presentacion.WebServiceTV.ModificarRolRequestBody();
             inValue.Body.rolid = rolid;
             inValue.Body.nomb = nomb;
             Presentacion.WebServiceTV.ModificarRolResponse retVal = ((Presentacion.WebServiceTV.WebServiceSoap)(this)).ModificarRol(inValue);
+            return retVal.Body.ModificarRolResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2303,10 +2627,11 @@ namespace Presentacion.WebServiceTV {
             return base.Channel.ListarRoles(request);
         }
         
-        public Presentacion.WebServiceTV.RolVO[] ListarRoles() {
+        public Presentacion.WebServiceTV.TipoError ListarRoles(out Presentacion.WebServiceTV.RolVO[] lista) {
             Presentacion.WebServiceTV.ListarRolesRequest inValue = new Presentacion.WebServiceTV.ListarRolesRequest();
             inValue.Body = new Presentacion.WebServiceTV.ListarRolesRequestBody();
             Presentacion.WebServiceTV.ListarRolesResponse retVal = ((Presentacion.WebServiceTV.WebServiceSoap)(this)).ListarRoles(inValue);
+            lista = retVal.Body.lista;
             return retVal.Body.ListarRolesResult;
         }
         
@@ -2321,11 +2646,11 @@ namespace Presentacion.WebServiceTV {
             return ((Presentacion.WebServiceTV.WebServiceSoap)(this)).ListarRolesAsync(inValue);
         }
         
-        public void BorrarCliente(int cliid) {
-            base.Channel.BorrarCliente(cliid);
+        public Presentacion.WebServiceTV.TipoError BorrarCliente(int cliid) {
+            return base.Channel.BorrarCliente(cliid);
         }
         
-        public System.Threading.Tasks.Task BorrarClienteAsync(int cliid) {
+        public System.Threading.Tasks.Task<Presentacion.WebServiceTV.TipoError> BorrarClienteAsync(int cliid) {
             return base.Channel.BorrarClienteAsync(cliid);
         }
         
@@ -2334,10 +2659,11 @@ namespace Presentacion.WebServiceTV {
             return base.Channel.ListarClientes(request);
         }
         
-        public Presentacion.WebServiceTV.ClienteVO[] ListarClientes() {
+        public Presentacion.WebServiceTV.TipoError ListarClientes(out Presentacion.WebServiceTV.ClienteVO[] lista) {
             Presentacion.WebServiceTV.ListarClientesRequest inValue = new Presentacion.WebServiceTV.ListarClientesRequest();
             inValue.Body = new Presentacion.WebServiceTV.ListarClientesRequestBody();
             Presentacion.WebServiceTV.ListarClientesResponse retVal = ((Presentacion.WebServiceTV.WebServiceSoap)(this)).ListarClientes(inValue);
+            lista = retVal.Body.lista;
             return retVal.Body.ListarClientesResult;
         }
         

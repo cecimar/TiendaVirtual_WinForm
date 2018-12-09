@@ -36,7 +36,7 @@ namespace Presentacion
         private void BuscarProducto_Load(object sender, EventArgs e)
         {
             WebServiceSoapClient ws = new WebServiceSoapClient();
-            switch (lblParametroListar.Text)
+            /*switch (lblParametroListar.Text)
             {
 
                 case "Producto":
@@ -69,20 +69,25 @@ namespace Presentacion
                     break;
                 case "BackOffice":
                     this.Text = "Listar BackOffice";
-                    List<BackofficeVO> lstbo = new List<BackofficeVO>();
-                    lstbo = ws.ListarBackoffice().ToList();
+                    //List<BackofficeVO> lstbo = new List<BackofficeVO>();
+                    TipoError error = ws.ListarBackoffice(out BackofficeVO[] lstbo);
                     this.grdLista.DataSource = null;
                     this.grdLista.DataSource = lstbo;
                     break;
                 default:
                     this.Text = "";
                     break;
-            }
+            }*/
         }
 
         private void grdLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             MessageBox.Show(grdLista.CurrentRow.Cells[0].Value.ToString());
+
+        }
+
+        private void grdLista_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

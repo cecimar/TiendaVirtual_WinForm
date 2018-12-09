@@ -45,6 +45,7 @@
             this.grdLista.RowTemplate.Height = 24;
             this.grdLista.Size = new System.Drawing.Size(825, 438);
             this.grdLista.TabIndex = 10;
+            this.grdLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdLista_CellContentClick);
             this.grdLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdLista_CellDoubleClick);
             // 
             // btnCerrar

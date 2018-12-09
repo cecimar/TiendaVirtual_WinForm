@@ -124,8 +124,8 @@ namespace Presentacion
             WebServiceSoapClient ws = new WebServiceSoapClient();
 
             //Cargo el combo con los roles
-            List<RolVO> lstrol = new List<RolVO>();
-            lstrol = ws.ListarRoles().ToList();
+            //List<RolVO> lstrol = new List<RolVO>();
+            TipoError err = ws.ListarRoles(out RolVO[] lstrol);
             this.cmbRol.DataSource = null;
             this.cmbRol.DataSource = lstrol;
             this.cmbRol.ValueMember = "IdRol";

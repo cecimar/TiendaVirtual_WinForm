@@ -23,8 +23,8 @@ namespace Presentacion
             WebServiceSoapClient ws = new WebServiceSoapClient();
 
             //Cargo el combo con los roles
-            List<CategoriaVO> lstcat = new List<CategoriaVO>();
-            lstcat = ws.ListarCategorias().ToList();
+            //List<CategoriaVO> lstcat = new List<CategoriaVO>();
+            TipoError err = ws.ListarCategorias(out CategoriaVO[] lstcat);
             this.cmbCategoria.DataSource = null;
             this.cmbCategoria.DataSource = lstcat;
             this.cmbCategoria.ValueMember = "IdCategoria";
